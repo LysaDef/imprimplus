@@ -2,7 +2,7 @@
 
 $ENV =[
     /* Paramètres pour l'application */
-    'APP_NAME'    => 'M2L ResaWeb',
+    'APP_NAME'    => 'ImprimPlus',
     'APP_VERSION' => 'v3',
     /* Paramètres pour l'accès à la base de données */
     'DB_HOST'     => 'localhost',
