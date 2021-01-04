@@ -1,8 +1,0 @@
-Nom de l'application : M2L
-Type de l'application : Web
-Numéro de la version : v4
-Date de livraison : 22/12/20
-Nom et prénom de l'auteur du programme : Lysa Defurne-Caballero
-Description succincte de la fonctionnalité codée :        
- - Mise en place de la Feature 1 : Accès authentifié à l'application
- 
