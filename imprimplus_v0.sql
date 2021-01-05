@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 05 jan. 2021 à 08:54
+-- Généré le : mar. 05 jan. 2021 à 12:00
 -- Version du serveur :  10.3.25-MariaDB-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -65,6 +65,30 @@ CREATE TABLE `modele` (
   `fichierImage` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `modele`
+--
+
+INSERT INTO `modele` (`id`, `libelle`, `fichierImage`) VALUES
+(1, 'carte de visite', ''),
+(2, 'cartons de correspondance', ''),
+(3, 'affiches au format A3', ''),
+(4, 'affiches au format A2', ''),
+(5, 'affiches au format A0\r\n', 'affiches au format A1'),
+(6, 'enrouleurs XS', ''),
+(7, 'enrouleurs S', ''),
+(8, 'enrouleurs M', ''),
+(9, 'enrouleurs L', ''),
+(10, 'enrouleurs XL', ''),
+(11, 'enrouleurs XL', ''),
+(12, 'banderoles XS', ''),
+(13, 'banderoles S', ''),
+(14, 'banderoles M', ''),
+(15, 'banderoles L', ''),
+(16, 'banderoles XL', ''),
+(17, 'banderoles XXL', ''),
+(18, 'affiches au format A1', '');
+
 -- --------------------------------------------------------
 
 --
@@ -77,6 +101,15 @@ CREATE TABLE `operateur` (
   `service_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `operateur`
+--
+
+INSERT INTO `operateur` (`id`, `user_id`, `service_id`) VALUES
+(1, 2, 1),
+(2, 3, 2),
+(3, 4, 3);
+
 -- --------------------------------------------------------
 
 --
@@ -88,6 +121,16 @@ CREATE TABLE `reduction` (
   `caMoisDernier` varchar(255) NOT NULL,
   `pourcentageReduction` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `reduction`
+--
+
+INSERT INTO `reduction` (`id`, `caMoisDernier`, `pourcentageReduction`) VALUES
+(1, '206 euros', '5% de réduction'),
+(2, '1003 euros', '10% de réduction'),
+(3, '140 euros', 'pas de réduction'),
+(4, '2250 euros ', '12% de réduction');
 
 -- --------------------------------------------------------
 
@@ -134,6 +177,16 @@ CREATE TABLE `tarif` (
   `montant` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `tarif`
+--
+
+INSERT INTO `tarif` (`id`, `modele_id`, `quantite`, `montant`) VALUES
+(1, 15, '12', '1003 euros'),
+(2, 8, '25', '2250 euros'),
+(3, 1, '200', '206 euros'),
+(4, 3, '8', '140 euros');
+
 -- --------------------------------------------------------
 
 --
@@ -156,7 +209,7 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `login`, `password`, `nom`, `prenom`, `actif`, `su`) VALUES
 (1, 'usersio', '0ec960d4105605608894658ed65e81a85a34839e', 'SIO', 'user', 1, 1),
-(2, 'Lysa', '0ec960d4105605608894658ed65e81a85a34839e', 'DEFURNE', 'Lysa', 0, 0),
+(2, 'Lysa', '0ec960d4105605608894658ed65e81a85a34839e', 'DEFURNE', 'Lysa', 1, 0),
 (3, 'Mathieu', '0ec960d4105605608894658ed65e81a85a34839e', 'CHARRON', 'Mathieu', 1, 0),
 (4, 'Nathan', '0ec960d4105605608894658ed65e81a85a34839e', 'Guillet', 'Nathan', 0, 1);
 
@@ -240,31 +293,31 @@ ALTER TABLE `client`
 -- AUTO_INCREMENT pour la table `commander`
 --
 ALTER TABLE `commander`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `modele`
 --
 ALTER TABLE `modele`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT pour la table `operateur`
 --
 ALTER TABLE `operateur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `reduction`
 --
 ALTER TABLE `reduction`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `salarie`
 --
 ALTER TABLE `salarie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT pour la table `service`
@@ -276,7 +329,7 @@ ALTER TABLE `service`
 -- AUTO_INCREMENT pour la table `tarif`
 --
 ALTER TABLE `tarif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `user`

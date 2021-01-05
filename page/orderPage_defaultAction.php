@@ -34,10 +34,10 @@ $html='';
 foreach ($commandes as $commande) {
     $html.='<tr>';
     $html.='<td>'.$commande['id'].'</td>';
+    $html.='<td>'.$commande['nom'].'</td>';
+    $html.='<td>'.$commande['prenom'].'</td>';
     $html.='<td>'.$commande['date'].'</td>';
-    $html.='<td>'.$commande['heureDebut'].'</td>';
-    $html.='<td>'.$commande['heureFin'].'</td>';
-    $html.='<td>'.$commande['salle'].'</td>';
+    $html.='<td>'.$commande['libelle'].'</td>';
     $html.='</tr>';
 }
 
@@ -56,4 +56,5 @@ echo $html
 </table>
 
     </div>
+    
 <?php include('template/footer.php'); ?>
