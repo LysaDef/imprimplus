@@ -2,10 +2,9 @@
 <?php include('template/menu.php'); ?>
 
     
-<<<<<<< HEAD
+
     <div class="container">
-<<<<<<< HEAD
-        
+
         <div class="row g-2">
             <div class="col-md">
                 <div class="form-floating">
@@ -25,10 +24,9 @@
                 </div>
             </div>
         </div>
-=======
-=======
+
     <br>
->>>>>>> 5d964a470a84c233a21d5e98fecab65ca3a74614
+
         <h1> Commandes </h1>
         <select class="form-select" aria-label="Default select example">
             <?php
@@ -41,7 +39,7 @@
         <br>
         <br>
         <caption>choisir l'image</caption>
->>>>>>> 5825e4c4fa9ffada1f1cd11dc485c7a686872b31
+
         <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupFile01">Upload</label>
             <input type="file" class="form-control" id="inputGroupFile01">
