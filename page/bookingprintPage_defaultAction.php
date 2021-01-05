@@ -1,6 +1,8 @@
 <?php include('template/header.php'); ?>
+<?php include('template/menu.php'); ?>
 
     
+<<<<<<< HEAD
     <div class="container">
 <<<<<<< HEAD
         
@@ -24,10 +26,12 @@
             </div>
         </div>
 =======
+=======
+    <br>
+>>>>>>> 5d964a470a84c233a21d5e98fecab65ca3a74614
         <h1> Commandes </h1>
         <select class="form-select" aria-label="Default select example">
             <?php
-            $html='';
             foreach ($formats as $format){
                 $html.='<option value="'.$format['id'].'">'.$format['libelle'].'</option>';
             }
@@ -46,5 +50,5 @@
         <div class="input-group mb-3">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1">Validé</button>
         </div>
-    </div>
+
 <?php include('template/footer.php'); ?>
