@@ -24,7 +24,7 @@ function authenticateControl_defaultAction()
 }
 function authenticateControl_loginAction()
 {
-    $mail=$_POST['mail'];
+    $mail=$_POST['login'];
     $pwd=hash('sha1',$_POST['pwd']);
     
 
@@ -37,12 +37,12 @@ function authenticateControl_loginAction()
         
     }
     else{
-        if ($user[0]['acces']){
+        if ($user[0]['actif']){
             $_SESSION['id']=$user[0]['id'];
             $_SESSION['email']=$user[0]['email'];
             $_SESSION['nom']=$user[0]['nom'];
             $_SESSION['prenom']=$user[0]['prenom'];
-            $_SESSION['ligue_id']=$user[0]['ligue_id'];
+
             header('location:?route=dashboard');
         }
         else{
