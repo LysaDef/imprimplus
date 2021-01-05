@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 05 jan. 2021 à 12:00
+-- Généré le : mar. 05 jan. 2021 à 13:15
 -- Version du serveur :  10.3.25-MariaDB-0ubuntu0.20.04.1
 -- Version de PHP : 7.4.3
 
@@ -38,6 +38,16 @@ CREATE TABLE `client` (
   `reduction_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`id`, `raisonSociale`, `adresse`, `cp`, `ville`, `tel`, `email`, `reduction_id`) VALUES
+(1, 'enri', '7 rue des Fleurs', '37000', 'Tours', '0698534712', 'enri@gmail.com', 1),
+(2, 'tual', '13 rue des Champs', '37000', 'Nantes', '0639587217', 'tual@gmail.com', 2),
+(3, 'zer', 'impasse Deligny', '75000', 'Paris', '0635829675', 'zer@gmail.com', 3),
+(4, 'lik', '2 rue Basse', '75000', 'Paris', '0659887534', 'lik@gmail.com', 4);
+
 -- --------------------------------------------------------
 
 --
@@ -52,6 +62,16 @@ CREATE TABLE `commander` (
   `fichierImage` varchar(255) NOT NULL,
   `date` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `commander`
+--
+
+INSERT INTO `commander` (`id`, `modele_id`, `salarie_id`, `quantite`, `fichierImage`, `date`) VALUES
+(2, 15, 1, '12', '', '5 septembre 2020'),
+(3, 8, 2, '25', '', '9 octobre 2020'),
+(4, 1, 3, '200', '', '18 decembre 2020'),
+(5, 3, 4, '8', '', '2 janvier 2021');
 
 -- --------------------------------------------------------
 
@@ -127,10 +147,10 @@ CREATE TABLE `reduction` (
 --
 
 INSERT INTO `reduction` (`id`, `caMoisDernier`, `pourcentageReduction`) VALUES
-(1, '206 euros', '5% de réduction'),
-(2, '1003 euros', '10% de réduction'),
-(3, '140 euros', 'pas de réduction'),
-(4, '2250 euros ', '12% de réduction');
+(1, '206 euros', '5'),
+(2, '1003 euros', '10'),
+(3, '140 euros', '0'),
+(4, '2250 euros ', '12');
 
 -- --------------------------------------------------------
 
@@ -143,6 +163,16 @@ CREATE TABLE `salarie` (
   `user_id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `salarie`
+--
+
+INSERT INTO `salarie` (`id`, `user_id`, `client_id`) VALUES
+(1, 2, 1),
+(2, 3, 4),
+(3, 4, 3),
+(4, 1, 4);
 
 -- --------------------------------------------------------
 
@@ -287,13 +317,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `commander`
 --
 ALTER TABLE `commander`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `modele`
@@ -317,7 +347,7 @@ ALTER TABLE `reduction`
 -- AUTO_INCREMENT pour la table `salarie`
 --
 ALTER TABLE `salarie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT pour la table `service`

@@ -32,5 +32,39 @@
         </div>
     <br>
     <h1> Liste de vos commandes </h1>
+    <table class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Quantité</th>
+      <th scope="col">Modèle</th>
+      <th scope="col">Image</th>
+    </tr>
+  </thead>
+  <tbody>
+
+
+<?php 
+
+$html='';
+foreach ($commandesPerso as $commandePerso) {
+  
+      $html.='<tr>';
+      $html.='<td>'.$commande['date'].'</td>';
+      $html.='<td>'.$commande['quantite'].'</td>';
+      $html.='<td>'.$commande['libelle'].'</td>';
+      $html.='</tr>';
+  
+
+  
+  
+
+}
+echo $html;
+
+?>
+
+  </tbody>
+</table>
 
 <?php include('template/footer.php'); ?>

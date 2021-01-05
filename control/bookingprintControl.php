@@ -13,6 +13,8 @@ function bookingprintControl($userAction){
 function bookingprintControl_defaultAction()
 {
     $formats=formatData_getAll();
+    $commandes=commandeData_getAll();
+    $commandesPerso=commandePersoData_getAll();
     $tabTitle = "BookingPrint";
 
     include('../page/bookingprintPage_defaultAction.php');
