@@ -2,20 +2,18 @@
 <?php include('template/menu.php'); ?>
     <div class="container">
 
-<table>
-<tbody>
-
+<h3>Chiffre d'affaire total généré mois par mois par toutes les commandes</h3>
 
 <?php 
 
 $totalCa='';
-$totalCa.='<tr>';
-$totalCa.='<td>'.$caClient['caMoisDernier'].'</td>';
-$totalCa='</tr>';
+$totalCa.=$caClient['caMoisDernier'];
+var_dump($caClient['caMoisDernier']);
+
 //$totalCa=$caClient['caMoisDernier'];?>
 
-</tbody>
-</table>
+<?php echo $totalCa ?>
 
     </div>
+
 <?php include('template/footer.php'); ?>
