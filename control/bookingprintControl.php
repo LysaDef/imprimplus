@@ -23,5 +23,10 @@ function bookingprintControl_defaultAction()
     include('../page/bookingprintPage_defaultAction.php');
 }
 function bookingControl_CommandeAction(){
-    var_dump($commandes);
+    $type=$_POST["format"];
+    $quantite=$_POST["qte"];
+
+    echo $type;
+
+
 }
