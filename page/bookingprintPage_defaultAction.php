@@ -5,7 +5,6 @@
         <h1> Commandes </h1>
         <select class="form-select" aria-label="Default select example">
             <?php
-            $html='';
             foreach ($formats as $format){
                 $html.='<option value="'.$format['id'].'">'.$format['libelle'].'</option>';
             }
