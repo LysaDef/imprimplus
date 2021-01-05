@@ -1,5 +1,5 @@
 <?php include('template/header.php'); ?>
-    <div class="container">
+<?php include('template/menu.php'); ?>
 
 
 <table class="table">
@@ -39,6 +39,6 @@ echo $html;
   </tbody>
 </table>
 
-    </div>
+
 
 <?php include('template/footer.php'); ?>
