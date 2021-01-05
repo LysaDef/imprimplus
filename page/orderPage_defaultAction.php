@@ -24,8 +24,9 @@ foreach ($commandes as $commande) {
     $html.='<tr>';
     $html.='<th scope="row">'.$commande['id'].'</th>';
     $html.='<td>'.$commande['nom'].'</td>';
-    $html.='<td>'.$commande['user.prenom'].'</td>';
+    $html.='<td>'.$commande['prenom'].'</td>';
     $html.='<td>'.$commande['date'].'</td>';
+    $html.='<td>'.$commande['quantite'].'</td>';
     $html.='<td>'.$commande['libelle'].'</td>';
     $html.='</tr>';
 
