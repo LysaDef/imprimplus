@@ -19,7 +19,7 @@
                     <a class="nav-link" href="?route=order">Reservations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="?route=responsible">Espace Administration<sup><span class="badge badge-primary">Nouveau!</span></sup></a>
+                    <a class="nav-link" href="?route=turnover">Espace Administration<sup><span class="badge badge-primary">Nouveau!</span></sup></a>
                 </li>
 
 
