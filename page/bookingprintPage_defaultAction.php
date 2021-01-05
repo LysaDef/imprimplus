@@ -1,7 +1,8 @@
 <?php include('template/header.php'); ?>
+<?php include('template/menu.php'); ?>
 
     
-    <div class="container">
+    <br>
         <h1> Commandes </h1>
         <select class="form-select" aria-label="Default select example">
             <?php
@@ -23,5 +24,5 @@
         <div class="input-group mb-3">
             <button class="btn btn-outline-secondary" type="button" id="button-addon1">Validé</button>
         </div>
-    </div>
+
 <?php include('template/footer.php'); ?>
