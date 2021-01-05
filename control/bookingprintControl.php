@@ -3,6 +3,9 @@
 function bookingprintControl($userAction){
     switch ($userAction) {
         //code à ajouter quand il y aura des actions
+        case 'commande':
+            bookingControl_CommandeAction();
+            break;
         default:
             bookingprintControl_defaultAction();
             break;
@@ -18,4 +21,7 @@ function bookingprintControl_defaultAction()
     $tabTitle = "BookingPrint";
 
     include('../page/bookingprintPage_defaultAction.php');
+}
+function bookingControl_CommandeAction(){
+    var_dump($commandes);
 }

@@ -5,7 +5,7 @@
 
     <div class="container">
         
-        <h1> Commandes </h1>
+        <h1> Faire une commande </h1>
         <select class="form-select" aria-label="Default select example">
             <?php
             foreach ($formats as $format){
@@ -28,17 +28,18 @@
         </form>
         <br>
         <div class="input-group mb-3">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Validé</button>
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1">Valider</button>
         </div>
     <br>
     <h1> Liste de vos commandes </h1>
     <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">Date</th>
+      <th scope="col">Image</th>
       <th scope="col">Quantité</th>
       <th scope="col">Modèle</th>
-      <th scope="col">Image</th>
+      <th scope="col">Date</th>
+      
     </tr>
   </thead>
   <tbody>
@@ -50,9 +51,9 @@ $html='';
 foreach ($commandesPerso as $commandePerso) {
   
       $html.='<tr>';
-      $html.='<td>'.$commande['date'].'</td>';
-      $html.='<td>'.$commande['quantite'].'</td>';
       $html.='<td>'.$commande['libelle'].'</td>';
+      $html.='<td>'.$commande['quantite'].'</td>';
+      $html.='<td>'.$commande['date'].'</td>';
       $html.='</tr>';
   
 
