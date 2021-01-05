@@ -35,6 +35,9 @@ switch($route){
     case 'authenticate':
         authenticateControl($action);
     break;
+    case 'bookingprint':
+        bookingprintControl($action);
+        break;
 
     default:
     echo "La route spécifiée n'existe pas";

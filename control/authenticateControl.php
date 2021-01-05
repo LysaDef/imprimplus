@@ -43,6 +43,7 @@ function authenticateControl_loginAction()
             $_SESSION['nom']=$user[0]['nom'];
             $_SESSION['prenom']=$user[0]['prenom'];
 
+
             header('location:?route=dashboard');
         }
         else{
