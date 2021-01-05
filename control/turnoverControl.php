@@ -8,9 +8,11 @@ function turnoverControl($userAction){
 
     }
 }
-$totalCa='';
-function turnoverControl_defaultAction(){
-    $chiffreAffaire=chiffreAffaireData_getAll();
-    $totalCa.= $totalCa + $chiffreAffaire['caMoisDernier'];
 
+function turnoverControl_defaultAction(){
+    $caClient=chiffreAffaireData_getAll();
+    
+    //$totalCa.= $totalCa + $chiffreAffaire['caMoisDernier'];
+    include('../page/turnoverPage_defaultAction.php');
 }
+
