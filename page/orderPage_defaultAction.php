@@ -26,6 +26,26 @@
     </tr>
   </thead>
   <tbody>
+
+
+<?php 
+
+$html='';
+foreach ($commandes as $commande) {
+    $html.='<tr>';
+    $html.='<td>'.$commande['id'].'</td>';
+    $html.='<td>'.$commande['date'].'</td>';
+    $html.='<td>'.$commande['heureDebut'].'</td>';
+    $html.='<td>'.$commande['heureFin'].'</td>';
+    $html.='<td>'.$commande['salle'].'</td>';
+    $html.='</tr>';
+}
+
+echo $html
+
+?>
+
+
     <tr>
       <th scope="row">1</th>
       <td>Mark</td>
