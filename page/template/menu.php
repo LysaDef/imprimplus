@@ -19,7 +19,12 @@
                     <a class="nav-link" href="?route=order">Reservations</a>
                 </li>
                 <li class="nav-item">
-                    <span style="margin-left: 300px;" class="nav-link";><?php echo $_SESSION['prenom']." ".strtoupper($_SESSION['nom']) ?> &nbsp; <a href="?route=authenticate&action=logout" class="badge badge-danger">Déconnexion</a></span>
+                    <a class="nav-link" href="?route=responsible">Espace Administration<sup><span class="badge badge-primary">Nouveau!</span></sup></a>
+                </li>
+
+
+                <li class="nav-item">
+                    <span style="margin-left: 150px;" class="nav-link";><?php echo $_SESSION['prenom']." ".strtoupper($_SESSION['nom']) ?> &nbsp; <a href="?route=authenticate&action=logout" class="badge badge-danger">Déconnexion</a></span>
                 </li>
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

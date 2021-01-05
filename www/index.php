@@ -8,6 +8,7 @@ include ('../data/caMoisDernierData.php');
 include ('../control/authenticateControl.php');
 include ('../control/orderControl.php');
 include ('../control/dashboardControl.php');
+include ('../control/responsibleforclientControl.php');
 include ('../control/bookingprintControl.php');
 include ('../control/turnoverControl.php');
 include ('../data/userData.php');
@@ -47,6 +48,10 @@ switch($route){
     case 'turnover':
         turnoverControl($action);
         break;
+
+        case 'responsible':
+        responsibleControl($action);
+    break;
 
     default:
     echo "La route spécifiée n'existe pas";
