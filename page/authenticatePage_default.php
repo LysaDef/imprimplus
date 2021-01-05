@@ -15,8 +15,8 @@
         <div class="col-lg-6">
         <form method="POST" action="?route=authenticate&action=login">
             <div class="form-group">
-                <label for="exampleInputEmail1">Adresse mail</label>
-                <input type="text" class="form-control" name="login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Votre adresse email">
+                <label for="exampleInputEmail1">Login</label>
+                <input type="text" class="form-control" name="login" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Entrez votre login">
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Mot de passe </label>
