@@ -9,14 +9,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="?route=dashboard">Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="?route=bookingprint">Commander</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="?route=order">Reservations</a>
                 </li>
                 <li class="nav-item">
                     <span style="margin-left: 300px;" class="nav-link";><?php echo $_SESSION['prenom']." ".strtoupper($_SESSION['nom']) ?> &nbsp; <a href="?route=authenticate&action=logout" class="badge badge-danger">Déconnexion</a></span>
