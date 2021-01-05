@@ -4,10 +4,12 @@ include ('../config/env.php');
 include ('../data/Connection.php');
 include ('../data/commandeData.php');
 include ('../data/formatData.php');
+include ('../data/caMoisDernierData.php');
 include ('../control/authenticateControl.php');
 include ('../control/orderControl.php');
 include ('../control/dashboardControl.php');
 include ('../control/bookingprintControl.php');
+include ('../control/turnoverControl.php');
 include ('../data/userData.php');
 
 
@@ -41,6 +43,9 @@ switch($route){
         break;
     case 'order':
         orderControl($action);
+        break;
+    case 'turnover':
+        turnoverControl($action);
         break;
 
     default:
