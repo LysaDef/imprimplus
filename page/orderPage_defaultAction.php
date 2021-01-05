@@ -1,17 +1,6 @@
 <?php include('template/header.php'); ?>
     <div class="container">
 
-<!--<table>
-    <caption>Les commandes mois par mois, client par client</caption>
-    <thead>
-    <tr><th>#</th><th>Nom</th><th>Prenom</th><th>Date</th><th>Quantité</th><th>Modèle</th><th>Image</th></tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-    <tfoot>
-    <tr><th>#</th><th>Nom</th><th>Prenom</th><th>Date</th><th>Quantité</th><th>Modèle</th><th>Image</th></tr>
-</table>-->
 
 <table class="table">
   <thead class="thead-light">
@@ -26,14 +15,29 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
+
+
+<?php 
+
+$html='';
+foreach ($commandes as $commande) {
+    $html.='<tr>';
+    $html.='<th scope="row">'.$commande['id'].'</th>';
+    $html.='<td>'.$commande['nom'].'</td>';
+    $html.='<td>'.$commande['user.prenom'].'</td>';
+    $html.='<td>'.$commande['date'].'</td>';
+    $html.='<td>'.$commande['libelle'].'</td>';
+    $html.='</tr>';
+
+
+}
+echo $html;
+
+?>
+
   </tbody>
 </table>
 
     </div>
+
 <?php include('template/footer.php'); ?>

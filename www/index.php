@@ -5,6 +5,7 @@ include ('../data/Connection.php');
 include ('../data/commandeData.php');
 include ('../data/formatData.php');
 include ('../control/authenticateControl.php');
+include ('../control/orderControl.php');
 include ('../control/dashboardControl.php');
 include ('../control/bookingprintControl.php');
 include ('../data/userData.php');
