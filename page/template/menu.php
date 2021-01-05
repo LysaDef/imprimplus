@@ -13,10 +13,13 @@
                     <a class="nav-link" href="#">Dashboard <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"></a>
+                    <a class="nav-link" href="?route=bookingprint">Commander</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Pricing</a>
+                </li>
+                <li class="nav-item">
+                    <span style="margin-left: 300px;" class="nav-link";><?php echo $_SESSION['prenom']." ".strtoupper($_SESSION['nom']) ?> &nbsp; <a href="?route=authenticate&action=logout" class="badge badge-danger">Déconnexion</a></span>
                 </li>
                 <!--<li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -38,11 +41,4 @@
 
 <div class="container">
 
-<nav>
-    <p><?php echo $_SESSION['prenom']." ".strtoupper($_SESSION['nom']) ?></p>
-    <ul>
-        <li><a href="?route=dashboard">Tableau de bord</a></li>
-        <li><a href="?route=authenticate&action=logout" class="badge badge-danger">Déconnexion</a></li>
-    </ul>
-</nav>
 
