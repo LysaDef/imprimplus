@@ -24,26 +24,45 @@ function bookingprintControl_defaultAction()
 }
 function bookingControl_CommandeAction(){
 
-    $list=userData_GetSalarieId($_SESSION['id']);
+
+    if(!empty($_POST['idModele'] AND !empty($_POST['content']))){
 
 
-    $datas['salarieid']=$list[0]['id'];
-    $datas['modele']=$_POST["idModele"];
-    $datas['quantity']=$_POST["nbQuantity"];
+        $list=userData_GetSalarieId($_SESSION['id']);
 
 
-    $test=commandePersoData_sendBDD($datas);
+        $datas['salarieid']=$list[0]['id'];
+        $datas['modele']=$_POST["idModele"];
+        $datas['quantity']=$_POST["nbQuantity"];
 
-    if ($test>0){
 
-         $message = "sended to db";
+        $test=commandePersoData_sendBDD($datas);
+
+        if ($test>0){
+
+            $message="ok!";
+            bookingprintControl_defaultAction();
+
+        } else {
+
+            $message="nooo";
+            bookingprintControl_defaultAction();
+
+        }
 
     } else {
 
-        $message = "error to db";
+        $formats=formatData_getAll();
+        $commandes=commandeData_getAll();
+        $commandesPerso=commandePersoData_getAll();
+        $tabTitle = "BookingPrint";
+        $message = "VEUILLEZ REMPLIR TOUT LES CHAMPS!";
+
+        include('../page/bookingprintPage_defaultAction.php');
 
     }
 
-    echo $message;
+
+
 
 }
