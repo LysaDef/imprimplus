@@ -15,6 +15,7 @@ function responsibleControl($userAction)
 function responsibleControl_defaultAction()
 {
     $tabTitle="Commandes mois par mois";
-    $commandes=commandeForResponsibleData_getAll();
+    $commandesSalaries=commandeForResponsibleData_getAll();
+    $caClient=chiffreAffaireData_getAll();
     include('../page/responsibleforclientPage_defaultAction.php');
 }

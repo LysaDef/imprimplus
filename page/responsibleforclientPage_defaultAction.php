@@ -17,19 +17,27 @@
     <?php 
 
 $html='';
-foreach ($commandes as $commande) {
+foreach ($commandesSalaries as $commandesSalarie) {
     $html.='<tr>';
-    $html.='<th scope="row">'.$commande['id'].'</th>';
-    $html.='<td>'.$commande['nom'].'</td>';
-    $html.='<td>'.$commande['prenom'].'</td>';
-    $html.='<td>'.$commande['date'].'</td>';
-    $html.='<td>'.$commande['quantite'].'</td>';
-    $html.='<td>'.$commande['libelle'].'</td>';
+    $html.='<td>'.$commandesSalarie['salarie_id'].'</td>';
+    $html.='<td>'.$commandesSalarie['nom'].'</td>';
+    $html.='<td>'.$commandesSalarie['prenom'].'</td>';
+    $html.='<td>'.$commandesSalarie['date'].'</td>';
+    $html.='<td>'.$commandesSalarie['quantite'].'</td>';
+    $html.='<td>'.$commandesSalarie['libelle'].'</td>';
+    
     $html.='</tr>';
 
 
 }
+
+foreach ($caClient as $ca){
+  $totalCaClient.='<tr>';
+  $totalCaClient.='<td>'.'<p>'.$ca['caMoisDernier']." €".'</p>'.'</td>';
+  $totalCaClient.='</tr>';}
+
 echo $html;
+echo $totalCaClient;
 
 ?>
 

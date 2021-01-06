@@ -25,6 +25,9 @@
             <li class="nav-item spacer">
                 <a class="nav-link" href="?route=turnover">Espace Administration</a>
             </li>
+            <li class="nav-item spacer">
+                <a class="nav-link" href="?route=responsible">Espace Superutilisateur</a>
+            </li>
 
         </ul>
         <form class="form-inline my-2 my-lg-0">
