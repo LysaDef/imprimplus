@@ -2,7 +2,7 @@
 
 function chiffreAffaireData_getAll()
 {
-    $request = "SELECT caMoisDernier FROM reduction";
+    $request = "SELECT * FROM reduction";
     $results = Connection::query($request);
     return $results;
     

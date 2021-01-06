@@ -62,6 +62,7 @@ $html='';
 foreach ($commandesPerso as $commandePerso) {
   
       $html.='<tr>';
+      $html.='<td>'.$commandePerso['image'].'</td>';
       $html.='<td>'.$commandePerso['quantite'].'</td>';
       $html.='<td>'.$commandePerso['libelle'].'</td>';
       $html.='<td>'.$commandePerso['date'].'</td>';

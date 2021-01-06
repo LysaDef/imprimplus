@@ -15,6 +15,6 @@ function responsibleControl($userAction)
 function responsibleControl_defaultAction()
 {
     $tabTitle="Commandes mois par mois";
-
+    $commandes=commandeData_getAll();
     include('../page/responsibleforclientPage_defaultAction.php');
 }
