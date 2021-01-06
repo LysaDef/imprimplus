@@ -2,8 +2,8 @@
 
 function bookingprintControl($userAction){
     switch ($userAction) {
-        //code à ajouter quand il y aura des actions
-        case 'commande':
+
+        case 'store':
             bookingControl_CommandeAction();
             break;
         default:
@@ -23,10 +23,27 @@ function bookingprintControl_defaultAction()
     include('../page/bookingprintPage_defaultAction.php');
 }
 function bookingControl_CommandeAction(){
-    $type=$_POST["format"];
-    $quantite=$_POST["qte"];
 
-    echo $type;
+    $list=userData_GetSalarieId($_SESSION['id']);
 
+
+    $datas['salarieid']=$list[0]['id'];
+    $datas['modele']=$_POST["idModele"];
+    $datas['quantity']=$_POST["nbQuantity"];
+
+
+    $test=commandePersoData_sendBDD($datas);
+
+    if ($test>0){
+
+         $message = "sended to db";
+
+    } else {
+
+        $message = "error to db";
+
+    }
+
+    echo $message;
 
 }

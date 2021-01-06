@@ -1,7 +1,7 @@
 <?php
 
 function formatData_getAll(){
-     $request="SELECT libelle FROM modele";
+     $request="SELECT * FROM modele";
      $results=Connection::query($request);
      return $results;
 }
