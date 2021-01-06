@@ -11,6 +11,7 @@ function turnoverControl($userAction){
 
 function turnoverControl_defaultAction(){
     $caClient=chiffreAffaireData_getAll();
+ 
     
     //$totalCa.= $totalCa + $chiffreAffaire['caMoisDernier'];
     include('../page/turnoverPage_defaultAction.php');
