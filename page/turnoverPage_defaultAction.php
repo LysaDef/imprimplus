@@ -16,7 +16,10 @@
 <?php 
 
 $totalCa= "";
+<<<<<<< HEAD
 $TotalCaClient= "";
+=======
+>>>>>>> 9692a452acb7a39dbea2143ad1f7c3bf53eb230b
 //$totalCa.='<tr>';
 //$totalCa.='<td>'.$caClient[0]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[1]['caMoisDernier'].'</th>';
@@ -40,7 +43,10 @@ foreach ($montantTotalCa as $montant) {
     $totalCa.='</tr>';
 
 }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9692a452acb7a39dbea2143ad1f7c3bf53eb230b
 echo $totalCa;
 
 
