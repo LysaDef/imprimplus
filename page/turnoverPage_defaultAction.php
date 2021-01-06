@@ -7,38 +7,40 @@
 <table class="table">
   <thead class="thead-light">
     <tr>
-
       <th scope="col">Chiffre d'affaire par client</th>
     </tr>
   </thead>
   <tbody>
 
+
 <?php 
 
-<<<<<<< HEAD
 $totalCa= "";
-=======
-//$totalCa= "";
->>>>>>> 7651f311eba7796ae1bf0a69b969d3d8c992644d
+$TotalCaClient= "";
 //$totalCa.='<tr>';
 //$totalCa.='<td>'.$caClient[0]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[1]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[2]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[3]['caMoisDernier'].'</th>';
 //$totalCa.='</tr>';
-<<<<<<< HEAD
-=======
-
-$totalCa='';
-$totalCa.=$caClient;
-var_dump($caClient['caMoisDernier']);
->>>>>>> 7651f311eba7796ae1bf0a69b969d3d8c992644d
 
 foreach ($caClient as $ca){
-    $totalCa.='<tr>';
-    $totalCa.='<td>'.'<p>'.$ca['caMoisDernier'].'</p>'.'</th>';
+    $totalCaClient.='<tr>';
+    $totalCaClient.='<td>'.'<p>'.$ca['caMoisDernier']." €".'</p>'.'</td>';
+    $totalCaClient.='</tr>';
+  
+    
+
 }
-<<<<<<< HEAD
+echo $totalCaClient;
+
+foreach ($montantTotalCa as $montant) {
+    $totalCa.='<tr>';
+    $totalCa.='<td>'.'<p>'."Total généré".$montant["SUM(caMoisDernier)"]." €".'</p>'.'</td>';
+    $totalCa.='</tr>';
+
+}
+
 echo $totalCa;
 
 
@@ -50,11 +52,6 @@ echo $totalCa;
 
 
 
-=======
-
-$totalCa.=$totalCa .$ca[0]['caMoisDernier'].$ca[1]['caMoisDernier'].$ca[2]['caMoisDernier'].$ca[3]['caMoisDernier'];
-$totalCa.=$totalCa + $ca['caMoisDernier'];
->>>>>>> 7651f311eba7796ae1bf0a69b969d3d8c992644d
 
 
 ?>
