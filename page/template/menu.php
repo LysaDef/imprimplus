@@ -1,40 +1,40 @@
-
-
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #202A38;">
     <div class="container-fluid">
-    <img src="http://127.0.0.1/prj/imprimplus/page/img/viewers/logo.png" width="70">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <img src="http://127.0.0.1/prj/imprimplus/page/img/viewers/logo.png" width="70">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="container">
+                <ul class="navbar-nav nav__bar__font mr-auto">
 
-            <li class="nav-item spacer">
-                <a class="nav-link" href="?route=dashboard">Dashboard</a>
-            </li>
-            <li class="nav-item spacer">
-                <a class="nav-link" href="?route=bookingprint">Commander</a>
-            </li>
-            <li class="nav-item spacer">
-                <a class="nav-link" href="?route=order">Reservations</a>
-            </li>
-            <li class="nav-item spacer">
-                <a class="nav-link" href="?route=turnover">Espace Administration</a>
-            </li>
-            <li class="nav-item spacer">
-                <a class="nav-link" href="?route=responsible">Espace Superutilisateur</a>
-            </li>
+                    <li class="nav-item spacer">
+                        <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard</a>
+                    </li><br>
+                    <li class="nav-item spacer">
+                        <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander</a>
+                    </li><br>
+                    <li class="nav-item spacer">
+                        <a class="nav-link nav__link__bg" href="?route=order">Reservations</a>
+                    </li><br>
+                    <li class="nav-item spacer">
+                        <a class="nav-link nav__link__bg " href="?route=turnover">Espace Administration</a>
+                    </li><br>
+                    <li class="nav-item spacer">
+                        <a class="nav-link nav__link__bg" href="?route=responsible">Espace Superutilisateur</a>
+                    </li>
 
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <span class="nav-item"><?php echo $_SESSION['prenom']." ".strtoupper($_SESSION['nom']) ?></span> &nbsp;<a href="?route=authenticate&logout" class="badge badge-dark">Déconnexion</a>
+                </ul>
+            </div>
+            <form class="form-inline my-2 my-lg-0">
+                <span class="nav-item nav__link__user"><?php echo $_SESSION['prenom'] . " " . strtoupper($_SESSION['nom']) ?></span>
+                <a class="nav-link nav__link__logout" href="?route=authenticate&logout">Déconnexion</a>
 
-        </form>
-    </div>
+
+            </form>
+        </div>
     </div>
 </nav>
 
