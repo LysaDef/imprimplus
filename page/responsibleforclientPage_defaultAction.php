@@ -17,9 +17,9 @@
     <?php 
 
 $html='';
-foreach ($commandes as $commande) {
+foreach ($commandes as $commande['id']) {
     $html.='<tr>';
-    $html.='<th scope="row">'.$commande['id'].'</th>';
+    $html.='<th>'.$commande['id'].'</th>';
     $html.='<td>'.$commande['nom'].'</td>';
     $html.='<td>'.$commande['prenom'].'</td>';
     $html.='<td>'.$commande['date'].'</td>';
