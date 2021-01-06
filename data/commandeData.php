@@ -31,6 +31,14 @@ function commandePersoData_getAll(){
 
 }
 
+<<<<<<< HEAD
+function commandeForResponsibleData_getAll()
+{
+    $request = "SELECT commander.id AS 'id', modele.libelle AS 'libelle', user.nom AS 'nom', user.prenom AS 'prenom', commander.quantite AS 'quantite', commander.date AS 'date' FROM commander JOIN salarie ON commander.salarie_id=salarie.id JOIN modele ON commander.modele_id=modele.id JOIN user ON salarie.user_id=user.id ORDER BY salarie_id ASC";
+    $results = Connection::query($request);
+    return $results;
+    
+=======
 
 function commandePersoData_sendBDD($datas){
 
@@ -39,5 +47,6 @@ function commandePersoData_sendBDD($datas){
     $results=Connection::exec($request);
     return $results;
 
+>>>>>>> 7e2af2c70b1881fb828ca485e1181d05413a54eb
 
 }

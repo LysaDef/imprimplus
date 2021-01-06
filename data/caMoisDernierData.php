@@ -8,3 +8,10 @@ function chiffreAffaireData_getAll()
     
 
 }
+
+function chiffreAffaireTotal()
+{
+    $request = "SELECT SUM(caMoisDernier) FROM reduction";
+    $results = Connection::query($request);
+    return $results;
+}
