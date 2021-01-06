@@ -3,10 +3,40 @@
 
 
     <div class="container">
-        <?php if (isset($message)) {
-            echo "<small>" . $message . "</small>";
+        <?php if (isset($message) and isset($messagetype)) {
+            switch ($messagetype) {
 
-        } ?>
+
+                case 2:
+                    ?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $message ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div><br>
+                    <?php
+                    break;
+
+                case 1: ?>
+
+                    <div class="alert alert-success" role="alert">
+                        <?php echo $message ?>
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div><br>
+                    <?php
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
+        ?>
+
+
         <h2> Faire une commande </h2>
         <hr>
 
@@ -23,7 +53,8 @@
 
                         <small id="emailHelp" class="form-text text-muted"><i class="fas fa-info-circle"></i> Votre
                             commande sera enregistré en tant
-                            que <?php echo $_SESSION['prenom'] . " " . strtoupper($_SESSION['nom']) ?></small><br>
+                            que <b><?php echo $_SESSION['prenom'] . " " . strtoupper($_SESSION['nom']) ?>
+                                *</b></small><br>
 
 
                         <div class="form-row">
@@ -81,6 +112,9 @@
                 <div class="jumbotron">
                     <h3>Vos réductions <span class="float-right"><i class="fas fa-ticket-alt"></i></span></h3>
                     <hr>
+
+
+                    PARTIE DE LYSA
                 </div>
             </div>
         </div>
@@ -97,6 +131,7 @@
             <th scope="col">Quantité</th>
             <th scope="col">Format</th>
             <th scope="col">Date</th>
+            <th scope="col">Actions</th>
 
         </tr>
         </thead>
@@ -108,11 +143,16 @@
         $html = '';
         foreach ($commandesPerso as $commandePerso) {
 
+
             $html .= '<tr>';
-            $html .= '<td>' . $commandePerso['image'] . '</td>';
+            $html .= '<td><a href="#" target="_blank">Prévisualisation</a>' . $commandePerso['image'] . '</td>';
             $html .= '<td>' . $commandePerso['quantite'] . '</td>';
             $html .= '<td>' . $commandePerso['libelle'] . '</td>';
-            $html .= '<td>' . $commandePerso['date'] . '</td>';
+            $html .= '<td>' . date_format($commandePerso['date'], "g:ia") . '</td>';
+            $html .= '<td><span class="badge badge-danger" style="cursor: pointer;"><i class="fas fa-trash-alt"></i></span>&nbsp;
+                          <span class="badge badge-primary" style="cursor: pointer;"><i class="fas fa-pen"></i></span>&nbsp;
+                        <!--  <span class="badge badge-dark" style="cursor: pointer;"><i class="fas fa-eye" style="color: white;"></i></span>-->
+                          </td>';
             $html .= '</tr>';
 
 
