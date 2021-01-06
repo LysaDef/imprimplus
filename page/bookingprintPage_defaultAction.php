@@ -14,32 +14,57 @@
     } ?>
         <h1> Faire une commande </h1>
 
-       <form method="POST" action="?route=bookingprint&action=store">
-            <select name="idModele" id="inputState" class="form-control">
-                <?php
-                foreach ($formats as $format){
-                    $html.='<option value="'.$format['id'].'">'.$format['libelle'].'</option>';
-                }
-                echo $html;
-                ?>
-            </select>
+    <div class="rows">
+        <div class="col-md-6">
+            <div class="jumbotron">
+                <form method="POST" action="?route=bookingprint&action=store">
+                        <div class="row">
+                            <div class="co-lg-12">
 
-            <br>
-            <caption>choisir l'image</caption>
+                        <select name="idModele" id="inputState" class="form-control">
+                            <?php
+                            foreach ($formats as $format){
+                                $html.='<option value="'.$format['id'].'">'.$format['libelle'].'</option>';
+                            }
+                            echo $html;
+                            ?>
+                        </select>
 
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupFile01">Upload</label>
-                <input type="file" class="form-control" id="inputGroupFile01">
+
+                            </div>
+                            <div class="col-lg-6">
+                        <br>
+
+
+                       <div class="input-group mb-3">
+                           <div class="custom-file">
+                               <input type="file" class="custom-file-input" id="inputGroupFile02">
+                               <label class="custom-file-label" for="inputGroupFile02">Votre image</label>
+                           </div>
+
+                       </div>
+                            </div>
+                            <div class="col-lg-6">
+
+
+                        <div class="form-floating">
+                            <input name="nbQuantity" type="number" class="form-control" id="floatingInputValue" placeholder="Quantitée" value="">
+                        </div>
+                        <br>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-primary btn-sm"  style="float: right;" type="submit" id="button-addon1">Valider</button>
+                        </div>
+
+
+                            </div>
+                    </div>
+
+                </div>
+              </form>
             </div>
-            <br>
-            <div class="form-floating">
-                <input name="nbQuantity" type="text" class="form-control" id="floatingInputValue" placeholder="quantitée" value="">
-            </div>
-            <br>
-            <div class="input-group mb-3">
-                <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Valider</button>
-            </div>
-        </form>
+        </div>
+    </div>
+
 
 <br>
     <h1> Liste de vos commandes </h1>

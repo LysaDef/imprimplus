@@ -53,5 +53,4 @@ function bookingControl_CommandeAction(){
 
 
 
-
 }
