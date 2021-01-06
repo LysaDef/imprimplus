@@ -1,13 +1,21 @@
 <?php include('template/header.php'); ?>
-<?php include('template/menu.php'); ?>
+<?php include('template/menu.php');?>
+
+
+
+
 
     
 
     <div class="container">
-        
+    <?php if(isset($message)){
+    echo "<small>". $message."</small>";
+
+    } ?>
         <h1> Faire une commande </h1>
-        <form method="POST" action="?route=bookingprint&action=commande"> 
-            <select name="format" class="form-select">
+
+       <form method="POST" action="?route=bookingprint&action=store">
+            <select name="idModele" id="inputState" class="form-control">
                 <?php
                 foreach ($formats as $format){
                     $html.='<option value="'.$format['id'].'">'.$format['libelle'].'</option>';
@@ -15,7 +23,7 @@
                 echo $html;
                 ?>
             </select>
-            <br>
+
             <br>
             <caption>choisir l'image</caption>
 
@@ -25,14 +33,15 @@
             </div>
             <br>
             <div class="form-floating">
-                <input name="qte" type="text" class="form-control" id="floatingInputValue" placeholder="quantitée" value="">
+                <input name="nbQuantity" type="text" class="form-control" id="floatingInputValue" placeholder="quantitée" value="">
             </div>
             <br>
             <div class="input-group mb-3">
                 <button class="btn btn-outline-secondary" type="submit" id="button-addon1">Valider</button>
             </div>
         </form>
-    <br>
+
+<br>
     <h1> Liste de vos commandes </h1>
     <table class="table">
   <thead class="thead-light">
@@ -53,6 +62,7 @@ $html='';
 foreach ($commandesPerso as $commandePerso) {
   
       $html.='<tr>';
+      $html.='<td>'.$commandePerso['image'].'</td>';
       $html.='<td>'.$commandePerso['quantite'].'</td>';
       $html.='<td>'.$commandePerso['libelle'].'</td>';
       $html.='<td>'.$commandePerso['date'].'</td>';
