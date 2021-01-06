@@ -15,6 +15,7 @@
 
 <?php 
 
+<<<<<<< HEAD
 //$totalCa= "";
 //$totalCa.='<tr>';
 //$totalCa.='<td>'.$caClient[0]['caMoisDernier'].'</th>';
@@ -22,6 +23,11 @@
 //$totalCa.='<td>'.$caClient[2]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[3]['caMoisDernier'].'</th>';
 //$totalCa.='</tr>';
+=======
+$totalCa='';
+$totalCa.=$caClient;
+var_dump($caClient['caMoisDernier']);
+>>>>>>> e74df138d923d872cfceea269f8a962e71d45215
 
 foreach ($caClient as $ca){
     $totalCa.='<tr>';
