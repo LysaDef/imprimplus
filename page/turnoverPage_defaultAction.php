@@ -15,29 +15,33 @@
 
 <?php 
 
-<<<<<<< HEAD
-//$totalCa= "";
+$totalCa= "";
 //$totalCa.='<tr>';
 //$totalCa.='<td>'.$caClient[0]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[1]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[2]['caMoisDernier'].'</th>';
 //$totalCa.='<td>'.$caClient[3]['caMoisDernier'].'</th>';
 //$totalCa.='</tr>';
-=======
-$totalCa='';
-$totalCa.=$caClient;
-var_dump($caClient['caMoisDernier']);
->>>>>>> e74df138d923d872cfceea269f8a962e71d45215
 
 foreach ($caClient as $ca){
     $totalCa.='<tr>';
-    $totalCa.='<td>'.'<p>'.$ca['caMoisDernier'].'<p>'.'</th>';
+    $totalCa.='<td>'.'<p>'.$ca['caMoisDernier'].'</p>'.'</th>';
 }
-$totalCa.=$totalCa + $ca['caMoisDernier'];
+echo $totalCa;
+
+
+   
+
+
+
+
+
+
+
 
 ?>
 
-<?php echo $totalCa ?>
+
 
 </tbody>
 </table>
