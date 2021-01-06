@@ -9,7 +9,7 @@ include ('../data/formatData.php');
 include ('../data/caMoisDernierData.php');
 include ('../data/userData.php');
 include ('../data/tarifData.php');
-include ('../data/DeleteData.php');
+include ('../data/deleteData.php');
 
 include ('../control/authenticateControl.php');
 include ('../control/orderControl.php');

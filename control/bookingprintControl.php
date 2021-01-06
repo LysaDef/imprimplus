@@ -15,10 +15,13 @@ function bookingprintControl($userAction)
             break;
         case 'show':
             $showId = $_GET['id'];
-            $check=commandeData_GetImage($showId);
+            $check = commandeData_GetImage($showId);
             $imageContent = $check[0]['fichierImage'];
-            echo "<img src=".$imageContent.">";
+            echo "<img src=" . $imageContent . ">";
 
+            break;
+        case 'update':
+            $showId = $_GET['id'];
             break;
         default:
             bookingprintControl_defaultAction();
@@ -36,7 +39,7 @@ function bookingprintControl_defaultAction()
     $list = userData_GetSalarieId($_SESSION['id']);
     $i_salarieId['id'] = $list[0]['id'];
 
-    $commandesPerso = commandePersoData_getAll($i_salarieId['id']);
+    $commandesPerso = commandePersoData_getOnlyUserInfos($i_salarieId['id']);
     $tabTitle = "BookingPrint";
 
     include('../page/bookingprintPage_defaultAction.php');
@@ -52,10 +55,12 @@ function bookingControl_SetupAlert($raison, $type)
     $commandes = commandeData_getAll();
 
 
+
+
     $list = userData_GetSalarieId($_SESSION['id']);
     $i_salarieId['id'] = $list[0]['id'];
 
-    $commandesPerso = commandePersoData_getAll($i_salarieId['id']);
+    $commandesPerso = commandePersoData_getOnlyUserInfos($i_salarieId['id']);
     $tabTitle = "BookingPrint";
 
     include('../page/bookingprintPage_defaultAction.php');
@@ -74,7 +79,7 @@ function bookingControl_CommandeAction()
         } else {
 
 
-            if(!empty($_FILES['image']['name'])) {
+            if (!empty($_FILES['image']['name'])) {
                 $list = userData_GetSalarieId($_SESSION['id']);
 
 
@@ -115,11 +120,6 @@ function bookingControl_CommandeAction()
 
                 bookingControl_SetupAlert("Erreur: Veuillez préciser l'image", 2);
             }
-
-
-
-
-
 
 
         }

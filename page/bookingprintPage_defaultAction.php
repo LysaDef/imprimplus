@@ -1,7 +1,7 @@
 <?php include('template/header.php'); ?>
 <?php include('template/menu.php'); ?>
 
-    <div class="container">
+
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="?route=dashboard">Dashboard</a></li>
@@ -10,7 +10,21 @@
             </ol>
         </nav>
 
-        <br>
+
+
+        <div class="alert alert-warning" role="alert">
+            [TODO]<br>
+            - Système d'update<br>
+            - Optimisation pour la prévisualisation<br><br>Avancement de la page:<br>
+            <div class="progress">
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <br>[+ OPTIONNEL]
+            <br>Réductions
+        </div>
+
+
         <?php if (isset($message) and isset($messagetype)) {
             switch ($messagetype) {
 
@@ -60,7 +74,7 @@
 
 
                         <small id="emailHelp" class="form-text text-muted"><i class="fas fa-info-circle"></i> Votre
-                            commande sera enregistré en tant
+                            commande sera enregistrée en tant
                             que <b><?php echo $_SESSION['prenom'] . " " . strtoupper($_SESSION['nom']) ?>
                                 *</b></small><br>
 
@@ -82,7 +96,7 @@
 
                                 <div class="form-floating">
                                     <input name="nbQuantity" type="number" class="form-control" id="floatingInputValue"
-                                           placeholder="Quantitée" value="">
+                                           placeholder="Quantité" value="">
                                 </div>
                                 <br>
 
@@ -108,8 +122,7 @@
                             <div class="col-md-4">
 
 
-                                <button class="btn btn-primary float-right" type="submit" id="button-addon1">Valider
-                                </button>
+                                <button class="btn btn-primary float-right" type="submit" id="button-addon1">Valider</button>
 
 
                             </div>
@@ -124,17 +137,16 @@
                     <hr>
 
 
-                    PARTIE DE LYSA
                 </div>
             </div>
         </div>
-    </div>
+
 
 
     <br>
     <h2> Vos commandes </h2>
     <hr>
-    <table class="table">
+    <table class="table table-striped">
         <thead class="thead-light">
         <tr>
             <th scope="col">Image</th>
@@ -158,13 +170,13 @@
             $i = $i + 1;
 
             $html .= '<tr>';
-            $html .= '<td><a href="?route=bookingprint&action=show&id=' . $commandePerso['id'] . '" target="_blank">Prévisualisation</a>' . $commandePerso['image'] . '</td>';
+            $html .= '<td><a href="?route=bookingprint&action=show&id=' . $commandePerso['id'] . '" target="_blank">Prévisualisation</a></td>';
             $html .= '<td>' . $commandePerso['quantite'] . '</td>';
             $html .= '<td>' . $commandePerso['libelle'] . '</td>';
             $html .= '<td>' . date('d/m/y à H:i', strtotime($commandePerso['date'])) . '</td>';
             $html .= '<td>Non</td>';
             $html .= '<td><a href="#" data-toggle="modal" data-target="#exampleModal' . $i . '" class="badge badge-danger" ><i class="fas fa-trash-alt"></i></a>&nbsp;
-                          <a href="#" class="badge badge-primary" style="cursor: pointer;"><i class="fas fa-pen"></i></a>&nbsp;
+                          <a href="?route=bookingprint&action=update&id='. $commandePerso['id'] . '" class="badge badge-primary" style="cursor: pointer;"><i class="fas fa-pen"></i></a>&nbsp;
                         <!--  <span class="badge badge-dark" style="cursor: pointer;"><i class="fas fa-eye" style="color: white;"></i></span>-->
                           </td>';
             $html .= '</tr>';
@@ -173,7 +185,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Êtes vous sur?</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Êtes vous sûr?</h5>
                          
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
@@ -184,7 +196,7 @@
 
                         <small id="emailHelp" class="form-text text-muted">Le contenu suivant sera supprimé :<br></small>
 
-                        <code>Identifiant: ' . $commandePerso['id'] . '<br><BR>Format: ' . $commandePerso['libelle'] . '<br>Quantité: ' . $commandePerso['quantite'] . '<br>Créé le: ' . date('d/m/y à H:i', strtotime($commandePerso['date'])) . '</code>
+                        Identifiant: <kbd>' . $commandePerso['id'] . '</kbd><br><BR>Format: <kbd>' . $commandePerso['libelle'] . '</kbd> <br>Quantité: <kbd>' . $commandePerso['quantite'] . '</kbd><br>Créé le: <kbd>' . date('d/m/y à H:i', strtotime($commandePerso['date'])) . '</kbd>
                         
                         <hr>
                         <div class="alert alert-danger" role="alert">
