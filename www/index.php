@@ -8,7 +8,11 @@ include ('../data/commandeData.php');
 include ('../data/formatData.php');
 include ('../data/caMoisDernierData.php');
 include ('../data/userData.php');
+<<<<<<< HEAD
 include ('../data/tarifData.php');
+=======
+include ('../data/deleteData.php');
+>>>>>>> fe7eb3ee9a3704a2340f00ea077f9b06058a7055
 
 
 include ('../control/authenticateControl.php');
