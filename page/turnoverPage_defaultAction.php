@@ -7,7 +7,7 @@
 <?php 
 
 $totalCa='';
-$totalCa.=$caClient['caMoisDernier'];
+$totalCa.=$caClient;
 var_dump($caClient['caMoisDernier']);
 
 //$totalCa=$caClient['caMoisDernier'];?>
