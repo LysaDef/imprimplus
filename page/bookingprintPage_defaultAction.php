@@ -39,7 +39,7 @@
     <tr>
       <th scope="col">Image</th>
       <th scope="col">Quantité</th>
-      <th scope="col">Modèle</th>
+      <th scope="col">Format</th>
       <th scope="col">Date</th>
       
     </tr>
@@ -53,9 +53,9 @@ $html='';
 foreach ($commandesPerso as $commandePerso) {
   
       $html.='<tr>';
-      $html.='<td>'.$commande['libelle'].'</td>';
-      $html.='<td>'.$commande['quantite'].'</td>';
-      $html.='<td>'.$commande['date'].'</td>';
+      $html.='<td>'.$commandePerso['quantite'].'</td>';
+      $html.='<td>'.$commandePerso['libelle'].'</td>';
+      $html.='<td>'.$commandePerso['date'].'</td>';
       $html.='</tr>';
   
 
