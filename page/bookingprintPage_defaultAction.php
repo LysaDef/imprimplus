@@ -139,6 +139,7 @@
             <th scope="col">Quantité</th>
             <th scope="col">Format</th>
             <th scope="col">Date</th>
+            <th scope="col">Modifié</th>
             <th scope="col">Actions</th>
 
         </tr>
@@ -149,25 +150,66 @@
         <?php
 
         $html = '';
+        $i = 0;
         foreach ($commandesPerso as $commandePerso) {
 
+            $i = $i + 1;
 
             $html .= '<tr>';
             $html .= '<td><a href="#" target="_blank">Prévisualisation</a>' . $commandePerso['image'] . '</td>';
             $html .= '<td>' . $commandePerso['quantite'] . '</td>';
             $html .= '<td>' . $commandePerso['libelle'] . '</td>';
             $html .= '<td>' . date('d/m/y à H:i', strtotime($commandePerso['date'])) . '</td>';
-            $html .= '<td><a href="#" class="badge badge-danger" ><i class="fas fa-trash-alt"></i></a>&nbsp;
+            $html .= '<td>Non</td>';
+            $html .= '<td><a href="#" data-toggle="modal" data-target="#exampleModal'.$i.'" class="badge badge-danger" ><i class="fas fa-trash-alt"></i></a>&nbsp;
                           <a href="#" class="badge badge-primary" style="cursor: pointer;"><i class="fas fa-pen"></i></a>&nbsp;
                         <!--  <span class="badge badge-dark" style="cursor: pointer;"><i class="fas fa-eye" style="color: white;"></i></span>-->
                           </td>';
             $html .= '</tr>';
 
+            $html .= '<div class="modal fade" id="exampleModal'.$i.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Êtes vous sur?</h5>
+                         
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+
+                        <small id="emailHelp" class="form-text text-muted">Le contenu suivant sera supprimé :<br></small>
+
+                        <code>Identifiant: '.$commandePerso['id'].'<br><BR>Format: '.$commandePerso['libelle'].'<br>Quantité: '.$commandePerso['quantite'].'<br>Créé le: '.date('d/m/y à H:i', strtotime($commandePerso['date'])).'</code>
+                        
+                        <hr>
+                        <div class="alert alert-danger" role="alert">
+                          Attention: Cette action sera irréversible
+                        </div>
+                 
+                           
+                    </div>
+                    <div class="modal-footer">
+                    
+                    
+                    
+                      
+                        <button type="button" class="btn btn-light" data-dismiss="modal">Fermer</button>
+                    
+                        <a href="?route=bookingprint&action=delete&id='.$commandePerso['id'].'" class="btn btn-danger active" role="button" aria-pressed="true">Supprimer définitivement</a>
+                    </div>
+                </div>
+            </div>';
 
         }
         echo $html;
 
         ?>
+
+
+
 
         </tbody>
     </table>

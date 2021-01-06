@@ -7,6 +7,12 @@ function bookingprintControl($userAction)
         case 'store':
             bookingControl_CommandeAction();
             break;
+        case 'delete':
+            $deleteId=$_GET['id'];
+            commandeData_deleteById($deleteId);
+            bookingControl_SetupAlert("Element supprimé avec succès !", 1);
+
+            break;
         default:
             bookingprintControl_defaultAction();
             break;

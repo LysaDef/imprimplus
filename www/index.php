@@ -8,6 +8,7 @@ include ('../data/commandeData.php');
 include ('../data/formatData.php');
 include ('../data/caMoisDernierData.php');
 include ('../data/userData.php');
+include ('../data/deleteData.php');
 
 
 include ('../control/authenticateControl.php');
