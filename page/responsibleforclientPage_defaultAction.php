@@ -17,7 +17,7 @@
     <?php 
 
 $html='';
-<<<<<<< HEAD
+$prix='';
 foreach ($commandesSalaries as $commandesSalarie) {
     $html.='<tr>';
     $html.='<td>'.$commandesSalarie['salarie_id'].'</td>';
@@ -26,32 +26,25 @@ foreach ($commandesSalaries as $commandesSalarie) {
     $html.='<td>'.$commandesSalarie['date'].'</td>';
     $html.='<td>'.$commandesSalarie['quantite'].'</td>';
     $html.='<td>'.$commandesSalarie['libelle'].'</td>';
-    
-=======
-foreach ($commandes as $commande['id']) {
-    $html.='<tr>';
-    $html.='<th>'.$commande['id'].'</th>';
-    $html.='<td>'.$commande['nom'].'</td>';
-    $html.='<td>'.$commande['prenom'].'</td>';
-    $html.='<td>'.$commande['date'].'</td>';
-    $html.='<td>'.$commande['quantite'].'</td>';
-    $html.='<td>'.$commande['libelle'].'</td>';
->>>>>>> dd228b6dbee91a3fe6e463acadb21e67479cb911
     $html.='</tr>';
 
 
 }
 
-foreach ($caClient as $ca){
-  $totalCaClient.='<tr>';
-  $totalCaClient.='<td>'.'<p>'.$ca['caMoisDernier']." €".'</p>'.'</td>';
-  $totalCaClient.='</tr>';}
+
+
+foreach ($tarifs as $tarif){
+  $prix.='<tr>';
+  $prix.='<td>'.'<p>'.$tarif['quantite'] * $tarif['montant']." €".'</p>'.'</td>';
+  $prix.='</tr>';}
+
 
 echo $html;
-echo $totalCaClient;
-
+echo $prix;
 ?>
 
+</tbody>
+</table>
 
     </div>
 <?php include('template/footer.php'); ?>

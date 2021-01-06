@@ -16,6 +16,6 @@ function responsibleControl_defaultAction()
 {
     $tabTitle="Commandes mois par mois";
     $commandesSalaries=commandeForResponsibleData_getAll();
-    $caClient=chiffreAffaireData_getAll();
+    $tarifs=tarifData_getAll();
     include('../page/responsibleforclientPage_defaultAction.php');
 }

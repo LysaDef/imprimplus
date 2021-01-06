@@ -2,12 +2,12 @@
 <?php include('template/menu.php'); ?>
     <div class="container">
 
-<h2>Chiffre d'affaire total</h2>
+<h2>Chiffre d'affaire total : </h2>
 
 <table class="table">
   <thead class="thead-light">
     <tr>
-      <th scope="col">id des clients</th>
+      <th scope="col">id des clients </th>
       <th scope="col">Chiffre d'affaire par client</th>
     </tr>
   </thead>
