@@ -25,7 +25,6 @@ function bookingprintControl_defaultAction()
 function bookingControl_CommandeAction(){
 
 
-    if(!empty($_POST['idModele'] AND !empty($_POST['content']))){
 
 
         $list=userData_GetSalarieId($_SESSION['id']);
@@ -50,17 +49,7 @@ function bookingControl_CommandeAction(){
 
         }
 
-    } else {
 
-        $formats=formatData_getAll();
-        $commandes=commandeData_getAll();
-        $commandesPerso=commandePersoData_getAll();
-        $tabTitle = "BookingPrint";
-        $message = "VEUILLEZ REMPLIR TOUT LES CHAMPS!";
-
-        include('../page/bookingprintPage_defaultAction.php');
-
-    }
 
 
 
