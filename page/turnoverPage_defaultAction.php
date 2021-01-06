@@ -38,7 +38,7 @@ echo $totalCaClient;
 
 foreach ($montantTotalCa as $montant) {
     $totalCa.='<tr>';
-    $totalCa.='<td>'.'<p>'.'<h4>Total généré mois par mois par toutes les commandes : '.$montant["SUM(caMoisDernier)"]." €".'</h4>'.'</p>'.'</td>';
+    $totalCa.='<p>'.'<h4>Total généré mois par mois par toutes les commandes : '.$montant["SUM(caMoisDernier)"]." €".'</h4>'.'</p>';
     $totalCa.='</tr>';
 
 }

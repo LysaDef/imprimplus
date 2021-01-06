@@ -15,7 +15,8 @@ function responsibleControl($userAction)
 function responsibleControl_defaultAction()
 {
     $tabTitle="Commandes mois par mois";
-    $commandesSalaries=commandeForResponsibleData_getAll();
-    $tarifs=tarifData_getAll();
+    //$mesCommandes=commandePersoData_getAllByUserId($_SESSION['id']);
+    
+    $mesCommandes=tarifData_getAllByUserId($_SESSION['id']);
     include('../page/responsibleforclientPage_defaultAction.php');
 }
