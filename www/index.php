@@ -10,12 +10,13 @@ include ('../data/caMoisDernierData.php');
 include ('../data/userData.php');
 include ('../data/tarifData.php');
 include ('../data/deleteData.php');
-<<<<<<< HEAD
+include ('../data/employeesData.php');
+
 include ('../data/responsibleForClientData.php');
 
-=======
+
 include ('../data/permissionsData.php');
->>>>>>> 3f47dd0ce4f898fc3bcb4e0f04825c64ac05f3e4
+
 
 include ('../control/authenticateControl.php');
 include ('../control/orderControl.php');
@@ -23,6 +24,8 @@ include ('../control/dashboardControl.php');
 include ('../control/responsibleforclientControl.php');
 include ('../control/bookingprintControl.php');
 include ('../control/turnoverControl.php');
+include ('../control/employeesControl.php');
+
 
 
 
@@ -60,7 +63,9 @@ switch($route){
     case 'turnover':
         turnoverControl($action);
         break;
-
+    case 'employees':
+        employeesControl($action);
+        break;
         case 'responsible':
         responsibleControl($action);
     break;
