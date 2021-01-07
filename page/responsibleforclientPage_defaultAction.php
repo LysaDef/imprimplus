@@ -16,19 +16,26 @@
         </thead>
         <tbody>
       <?php
-      foreach ($coordonneesClient as $coordonneesClients){
+      $totalCoordonnees="";
+      foreach ($coordonneesClients as $coordonneesClient){
         $totalCoordonnees.='<tr>';
-        $totalCoordonnees.='<td>'.'<p>'.$ca['raisonSociale'].'</p>'.'</td>';
-        $totalCoordonnees.='<td>'.'<p>'.$ca['adresse']." €".'</p>'.'</td>';
-        $totalCoordonnees.='<td>'.'<p>'.$ca['adresse']." €".'</p>'.'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['raisonSociale'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['adresse'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['cp'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['ville'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['tel'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['email'].'</td>';
         $totalCoordonnees.='</tr>';
       
         
     
     }
-echo $totalCoordonnees;
 
-  ?>
+    echo $totalCoordonnees;?>
+</tbody>
+</table>
+
+
 
 
 

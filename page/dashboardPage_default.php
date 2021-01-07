@@ -46,7 +46,7 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Réservations</h5>
+                                <h5 class="card-title">Services Comptable/Achat</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
                                 <a href="?route=order" class="btn btn-dark btn-sm btn-block">Accéder</a>
                             </div>
