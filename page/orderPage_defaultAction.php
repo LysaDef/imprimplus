@@ -1,46 +1,62 @@
 <?php include('template/header.php'); ?>
 <?php include('template/menu.php'); ?>
 
-<p class="text-light bg-dark text-center font-weight-bold">Services Comptable/Achat<h2>Les Commandes en cours mois par mois et client par client : </h2></p>
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Id client</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Prenom</th>
-      <th scope="col">Date</th>
-      <th scope="col">Quantité</th>
-      <th scope="col">Modèle</th>
-      <th scope="col">Image</th>
-    </tr>
-  </thead>
-  <tbody>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="?route=dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="?route=bookingprint">Commander</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Commandes en cours</li>
+        </ol>
+    </nav>
+
+    <h4 class="text-secondary">Les commandes en cours mois par mois et client par client <span class="float-right"><i
+                    class="fas fa-sitemap"></i></span></h4>
+    <hr>
 
 
-<?php 
+    <table class="table table-striped">
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">#Client</th>
+            <th scope="col">Utilisateur</th>
+            <th scope="col">Date</th>
+            <th scope="col">Quantité</th>
+            <th scope="col">Modèle</th>
+            <th scope="col">Image</th>
+            <th scope="col">Modifié</th>
+            <th scope="col">Société</th>
+        </tr>
+        </thead>
+        <tbody>
 
-$html='';
-foreach ($commandes as $commande) {
-    $html.='<tr>';
-    $html.='<th scope="row">'.$commande['id'].'</th>';
-    $html.='<td>'.$commande['client_id'].'</td>';
-    $html.='<td>'.$commande['nom'].'</td>';
-    $html.='<td>'.$commande['prenom'].'</td>';
-    $html.='<td>'.$commande['date'].'</td>';
-    $html.='<td>'.$commande['quantite'].'</td>';
-    $html.='<td>'.$commande['libelle'].'</td>';
-    $html.='</tr>';
+
+        <?php
+
+        $html = '';
+        foreach ($commandes as $commande) {
+            $html .= '<tr>';
+            $html .= '<th scope="row">' . $commande['id'] . '</th>';
+            $html .= '<td>' . $commande['client_id'] . '</td>';
+            $html .= '<td>' . $commande['nom'] . " " . $commande['prenom'] . '</td>';
+
+            $html .= '<td>' . date('d/m/y à H:i', strtotime($commande['date'])) . '</td>';
+            $html .= '<td>' . $commande['quantite'] . '</td>';
+            $html .= '<td>' . $commande['libelle'] . '</td>';
+            $html .= '<td><a href="?route=bookingprint&action=show&id=' . $commande['id'] . '" target="_blank">Prévisualisation</a></td>';
+            $html .= '<td>Non</td>';
+            $html .= '<td>' . $commande['raisonSociale'] . '</td>';
+            $html .= '</tr>';
 
 
-}
-echo $html;
+        }
+        echo $html;
 
-?>
+        ?>
 
-  </tbody>
-</table>
-
+        </tbody>
+    </table>
 
 
 <?php include('template/footer.php'); ?>

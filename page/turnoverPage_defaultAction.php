@@ -1,10 +1,18 @@
 <?php include('template/header.php'); ?>
 <?php include('template/menu.php'); ?>
-    <div class="container">
 
-    <p class="text-light bg-dark text-center font-weight-bold">Espace Administration<h2>Chiffre d'affaire total : </h2></p>
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="?route=dashboard">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="?route=employees">Administration</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Chiffre d'affaires</li>
+        </ol>
+    </nav>
 
-<table class="table">
+    <h4 class="text-secondary">Chiffre d'affaire total : <span class="float-right"><i class="fas fa-list-ol"></i></span></h4>
+    <hr>
+
+<table class="table table-striped">
   <thead class="thead-light">
     <tr>
       <th scope="col">id des clients </th>
@@ -48,6 +56,6 @@ echo $totalCa;
 </tbody>
 </table>
 
-    </div>
+
 
 <?php include('template/footer.php'); ?>
