@@ -2,7 +2,7 @@
       <?php include('template/menu.php'); ?>
           <div class="container">
 
-  <h2>Les coordonnées d'un de vos clients : </h2>
+  <h2>Les coordonnées de votre entreprise : </h2>
           <table class="table">
         <thead class="thead-light">
           <tr>
@@ -40,7 +40,7 @@
 
 
 
-          <h2>Liste des commandes de vos salariés : </h2>
+          <h2>Liste des commandes des salariés de votre entreprise : </h2>
           <table class="table">
         <thead class="thead-light">
           <tr>

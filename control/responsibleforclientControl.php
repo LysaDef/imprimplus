@@ -15,7 +15,7 @@ function responsibleControl($userAction)
 function responsibleControl_defaultAction()
 {
     $tabTitle="Commandes mois par mois";
-    $cordonneesClients=coordonneesClientData_getAll();
+    $coordonneesClients=coordonneesClientData_getAll();
     
     $mesCommandes=tarifData_getAllByUserId($_SESSION['id']);
     /*$clientUnUsers=user_getClient($userId);
