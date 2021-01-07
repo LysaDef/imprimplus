@@ -14,10 +14,11 @@
           <table class="table">
         <thead class="thead-light">
           <tr>
-            <th scope="col">Date</th>
+            <th scope="col">Type</th>
             <th scope="col">Quantité</th>
             <th scope="col">Modèle</th>
             <th scope="col">Montant total au mois</th>
+            <th scope="col">Date</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,9 @@
             $html.='<td>'.$commandes['quantiteCommandees'].'</td>';
             $html.='<td>'.$commandes['modele'].'</td>';
             $html.='<td>'.$commandes['montant'].'</td>';
+
+            $html.='<td>'.$commandes['date'].'</td>';
+            
             $html.='</tr>';
           }
 
