@@ -37,8 +37,8 @@ function coordonneesClientData_getAll(){
 }
 
 function commandesSalariesData_getAll($i_company){
-    $request="SELECT commander.quantite AS 'quantiteCommandees', salarie.id AS 'salarieId' ,modele.libelle AS 'modele' 
-    FROM commander JOIN salarie ON salarie.id=commander.salarie_id JOIN modele ON modele.id=commander.modele_id
+    $request="SELECT commander.quantite AS 'quantiteCommandees', salarie.id AS 'salarieId' ,modele.libelle AS 'modele' ,tarif.montant AS 'montant'
+    FROM commander JOIN salarie ON salarie.id=commander.salarie_id JOIN modele ON modele.id=commander.modele_id JOIN tarif ON modele.id=commander.modele_id
     WHERE salarie_id='" . $i_company . "'";
    // var_dump($request);
     $results=Connection::query($request);

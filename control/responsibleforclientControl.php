@@ -32,7 +32,6 @@ function responsibleControl_defaultAction()
         $salarieCommandes=commandesSalariesData_getAll($salarie['sid']);
         //var_dump($salarieCommandes);
         $commandesSalaries[]=$salarieCommandes;
-        var_dump($salarieCommandes);
         $salarieCommandes=[];
         
         
