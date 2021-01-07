@@ -1,56 +1,54 @@
-<?php 
+<?php
 session_start();
-include ('../config/env.php');
+include('../config/env.php');
 
 
-include ('../data/Connection.php');
-include ('../data/commandeData.php');
-include ('../data/formatData.php');
-include ('../data/caMoisDernierData.php');
-include ('../data/userData.php');
-include ('../data/tarifData.php');
-include ('../data/deleteData.php');
-<<<<<<< HEAD
-include ('../data/responsibleForClientData.php');
+include('../data/Connection.php');
+include('../data/commandeData.php');
+include('../data/formatData.php');
+include('../data/caMoisDernierData.php');
+include('../data/userData.php');
+include('../data/tarifData.php');
+include('../data/deleteData.php');
+include('../data/employeesData.php');
 
-=======
-include ('../data/permissionsData.php');
->>>>>>> 3f47dd0ce4f898fc3bcb4e0f04825c64ac05f3e4
-
-include ('../control/authenticateControl.php');
-include ('../control/orderControl.php');
-include ('../control/dashboardControl.php');
-include ('../control/responsibleforclientControl.php');
-include ('../control/bookingprintControl.php');
-include ('../control/turnoverControl.php');
+include('../data/responsibleForClientData.php');
 
 
+include('../data/permissionsData.php');
+
+include('../control/authenticateControl.php');
+include('../control/orderControl.php');
+include('../control/dashboardControl.php');
+include('../control/responsibleforclientControl.php');
+include('../control/bookingprintControl.php');
+include('../control/turnoverControl.php');
+include('../control/employeesControl.php');
 
 
-
-$route='';
+$route = '';
 
 if (isset($_GET['route'])) {
-    $route=$_GET['route'];
+    $route = $_GET['route'];
 }
 
-$action='';
+$action = '';
 if (isset($_GET['action'])) {
-    $action=$_GET['action'];
+    $action = $_GET['action'];
 }
 
-if (!isset($_SESSION['id'])){
-    $route='authenticate';
+if (!isset($_SESSION['id'])) {
+    $route = 'authenticate';
 }
 
-switch($route){
+switch ($route) {
 
     case 'dashboard':
         dashboardControl($action);
-    break;
+        break;
     case 'authenticate':
         authenticateControl($action);
-    break;
+        break;
     case 'bookingprint':
         bookingprintControl($action);
         break;
@@ -60,14 +58,17 @@ switch($route){
     case 'turnover':
         turnoverControl($action);
         break;
+    case 'employees':
+        employeesControl($action);
+        break;
 
-        case 'responsible':
+    case 'responsible':
         responsibleControl($action);
-    break;
+        break;
 
     default:
-    echo "La route spécifiée n'existe pas";
-    break;
+        echo "La route spécifiée n'existe pas";
+        break;
 }
 
 
