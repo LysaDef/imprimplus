@@ -39,7 +39,7 @@
                     </div>
                 </div>
             </div>
-            <br>
+
 
             <?php switch ($_SESSION['su']) {
                 case 1: ?>
@@ -52,19 +52,11 @@
                             </div>
                         </div>
                     </div>
-                    <br>
+
+
+
                     <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Service achat</h5>
-                                <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
-                                <a href="#" class="btn btn-dark btn-sm btn-block">Accéder</a>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="col-md-4">
-                        <br>
+
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">Service Administration</h5>
