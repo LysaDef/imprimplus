@@ -6,23 +6,12 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="?route=dashboard">Dashboard</a></li>
                 <li class="breadcrumb-item"><a href="?route=bookingprint">Commander</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Autres</li>
+                <li class="breadcrumb-item active" aria-current="page">Création d'une commande</li>
             </ol>
         </nav>
 
 
 
-        <div class="alert alert-warning" role="alert">
-            [TODO]<br>
-            - Système d'update<br>
-            - Optimisation pour la prévisualisation<br><br>Avancement de la page:<br>
-            <div class="progress">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-            </div>
-
-            <br>[+ OPTIONNEL]
-            <br>Réductions
-        </div>
 
 
         <?php if (isset($message) and isset($messagetype)) {

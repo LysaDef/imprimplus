@@ -12,18 +12,18 @@
                 <ul class="navbar-nav nav__bar__font mr-auto">
 
                     <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard</a>
+                        <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
                     </li>
                     <br>
                     <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander</a>
+                        <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
                     </li>
                     <br>
 
                     <?php switch ($_SESSION['su']) {
                         case 1: ?>
                             <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=employees">Employés</a>
+                                <a class="nav-link nav__link__bg" href="?route=employees">Employés <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
                             </li><br>
                             <li class="nav-item spacer">
                                 <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat</a>
