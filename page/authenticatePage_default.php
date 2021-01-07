@@ -1,7 +1,15 @@
-<?php include('template/header.php'); ?>
+<?php include('template/header.php');
+?>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" style="background: #202A38;">
+        <div class="container-fluid">
+            <img src="http://127.0.0.1/prj/imprimplus/page/img/viewers/logo.png" width="70">
+        </div>
+    </nav>
+    <br>
 
     <div class="container">
-        <h1>Connexion</h1>
+
+
         <!-- <form method="POST" action="?route=authenticate&action=login">
              <label for="mail">Adresse mail </label>
              <input type="email" name="mail" placeholder="Saisissez votre adresse mail">
@@ -9,10 +17,28 @@
              <input type="password" name="pwd" placeholder="Saisisser votre mot de passe">
              <input type="submit" value="Se connecter">
          </form>-->
-
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="?route=authenticate">Imprim+</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Connexion</li>
+            </ol>
+        </nav>
 
         <div class="row">
             <div class="col-lg-6">
+                <div class="jumbotron">
+                    <h3 class="text-secondary">Connexion au site <span class="float-right"><i class="fas fa-sign-in-alt"></i></span></h3>
+                    <hr>
+                    <?php if(!empty($message)){?>
+
+                        <div class="alert alert-danger" role="alert">
+                            <?php echo $message ?>
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+
+                    <?php } ?>
                 <form method="POST" action="?route=authenticate&action=login">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Login</label>
@@ -27,7 +53,19 @@
 
                     <button style="float: right;" type="submit" class="btn btn-primary">Connexion</button>
                 </form>
-                <small><?php echo $message ?></small>
+
+                </div>
+            </div>
+            <div class="col-lg-6">
+
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i></h4>
+                        <p>Toutes les fonctionnalitées du site n'ont pas encore été réalisées, veuillez nous contacter si un problème persiste.</p>
+                        <hr>
+                        <p class="mb-0"><small>Version: v3.0</small></p>
+                    </div>
+
+
             </div>
         </div>
     </div>
