@@ -1,7 +1,7 @@
 <?php include('template/header.php'); ?>
 <?php include('template/menu.php'); ?>
 
-
+<h2>Les Commandes en cours mois par mois et client par client : </h2>
 <table class="table">
   <thead class="thead-light">
     <tr>

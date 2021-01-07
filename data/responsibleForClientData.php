@@ -1,28 +1,29 @@
 <?php
 
-function user_getClient($user_id){
-    $request="SELECT * FROM client WHERE user_id=$user.id";
+function user_getClient($userId){
+    $request="SELECT * FROM client WHERE user_id=".$userId;
     $results=Connection::query($request);
     return $results;
     
 
 }
 
-function client_getUsers($client_id){
-    $request="SELECT * FROM user WHERE client_id=$client.id";
+function client_getUsers($clientId){
+    $request="SELECT * FROM user WHERE client_id=".$clientId;
+    var_dump($request);
     $results=Connection::query($request);
     return $results;
 }
 
-function user_getSalarie($user_id){
-    $request="SELECT * FROM salarie WHERE user_id=$user.id ";
+function user_getSalarie($userId){
+    $request="SELECT * FROM salarie WHERE user_id=".$userId ;
     $results=Connection::query($request);
     return $results;
     var_dump($request);
 }
 
-function user_getCommandes($user_id){
-    $request="SELECT * FROM commander WHERE user_id=$user.id";
+function user_getCommandes($userId){
+    $request="SELECT * FROM commander WHERE user_id=".$userId;
     $results=Connection::query($request);
     return $results;
 

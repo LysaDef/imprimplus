@@ -2,7 +2,7 @@
       <?php include('template/menu.php'); ?>
           <div class="container">
 
-  <h2>Les coordonnées d'un de vos clients : </h2>
+  <h2>Les coordonnées de votre entreprise : </h2>
           <table class="table">
         <thead class="thead-light">
           <tr>
@@ -16,24 +16,31 @@
         </thead>
         <tbody>
       <?php
-      foreach ($coordonneesClient as $coordonneesClients){
+      $totalCoordonnees="";
+      foreach ($coordonneesClients as $coordonneesClient){
         $totalCoordonnees.='<tr>';
-        $totalCoordonnees.='<td>'.'<p>'.$ca['raisonSociale'].'</p>'.'</td>';
-        $totalCoordonnees.='<td>'.'<p>'.$ca['adresse']." €".'</p>'.'</td>';
-        $totalCoordonnees.='<td>'.'<p>'.$ca['adresse']." €".'</p>'.'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['raisonSociale'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['adresse'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['cp'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['ville'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['tel'].'</td>';
+        $totalCoordonnees.='<td>'.$coordonneesClient['email'].'</td>';
         $totalCoordonnees.='</tr>';
       
         
     
     }
-echo $totalCoordonnees;
 
-  ?>
+    echo $totalCoordonnees;?>
+</tbody>
+</table>
 
 
 
 
-          <h2>Liste des commandes de vos salariés : </h2>
+
+
+          <h2>Liste des commandes des salariés de votre entreprise : </h2>
           <table class="table">
         <thead class="thead-light">
           <tr>
