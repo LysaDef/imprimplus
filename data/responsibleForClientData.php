@@ -36,8 +36,11 @@ function coordonneesClientData_getAll(){
 
 }
 
-function commandesSalariesData_getAll(){
-    $request="SELECT * FROM commander JOIN salarie ON commander.salarie_id=salarie.id WHERE raisonSociale='" . $i_company . "'";
+function commandesSalariesData_getAll($i_company){
+    $request="SELECT commander.quantite AS 'quantiteCommandees' 
+    FROM commander
+    WHERE salarie_id='" . $i_company . "'";
+   // var_dump($request);
     $results=Connection::query($request);
     return $results;
     

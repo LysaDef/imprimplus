@@ -2,38 +2,8 @@
       <?php include('template/menu.php'); ?>
           <div class="container">
 
-          <p class="text-light bg-dark text-center font-weight-bold">Espace Superutilisateur<h2>Les coordonnées de votre entreprise : </h2></p>
-          <table class="table">
-        <thead class="thead-light">
-          <tr>
-            <th scope="col">Nom du client</th>
-            <th scope="col">Adresse</th>
-            <th scope="col">Code postal</th>
-            <th scope="col">Ville</th>
-            <th scope="col">Numéro de téléphone</th>
-            <th scope="col">Email</th>
-          </tr>
-        </thead>
-        <tbody>
-      <?php
-      $totalCoordonnees="";
-      foreach ($commandesSalaries as $commandesSalarie){
-        $totalCommandes.='<tr>';
-        $totalCommandes.='<td>'.$commandesSalarie['raisonSociale'].'</td>';
-        $totalCommandes.='<td>'.$commandesSalarie['adresse'].'</td>';
-        $totalCommandes.='<td>'.$commandesSalarie['cp'].'</td>';
-        $totalCommandes.='<td>'.$commandesSalarie['ville'].'</td>';
-        $totalCommandes.='<td>'.$commandesSalarie['tel'].'</td>';
-        $totalCommandes.='<td>'.$commandesSalarie['email'].'</td>';
-        $totalCommandes.='</tr>';
-      
-        
-    
-    }
-
-    echo $totalCommandes;?>
-</tbody>
-</table>
+          <p class="text-light bg-dark text-center font-weight-bold">Espace Superutilisateur</p>
+       
 
 
 
@@ -56,17 +26,27 @@
 
       $html='';
       $prix=0;
-      foreach ($mesCommandes as $mesCommande) {
+      foreach ($commandesSalaries as $commandesSalarie) {
           $html.='<tr>';
-          $html.='<td>'.$mesCommande['date'].'</td>';
-          $html.='<td>'.$mesCommande['quantiteCommandees'].'</td>';
-          $html.='<td>'.$mesCommande['libelle'].'</td>';
+          $html.='<td>Salarié</td>';
+          $html.='</tr>';
+          foreach ($commandesSalarie as $commandes) {
+            $html.='<tr>';
+            $html.='<td>Commandes</td>';
+            $html.='<td>'.$commandes['quantiteCommandees'].'</td>';
+            $html.='</tr>';
+          }
+
+
+         /* $html.='<td>'.$commandesSalarie['date'].'</td>';
+          $html.='<td>'.$commandesSalarie['quantiteCommandees'].'</td>';
+          $html.='<td>'.$commandesSalarie['libelle'].'</td>';
         
       
-          $prix+=$mesCommande['quantiteCommandees'] * $mesCommande['montant'];
+          $prix+=$commandesSalarie['quantiteCommandees'] * $commandesSalarie['montant'];
     
-          $html.='<td>'.$mesCommande['montant'].'</td>';
-          $html.='</tr>';
+          $html.='<td>'.$commandesSalarie['montant'].'</td>';*/
+          
 
 
       }
