@@ -26,7 +26,7 @@
                                 <a class="nav-link nav__link__bg" href="?route=employees">Employés</a>
                             </li><br>
                             <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=order">Reservations</a>
+                                <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat</a>
                             </li><br>
                             <li class="nav-item spacer">
                                 <a class="nav-link nav__link__bg " href="?route=turnover">Espace Administration</a>

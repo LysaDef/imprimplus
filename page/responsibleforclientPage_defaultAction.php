@@ -2,7 +2,7 @@
       <?php include('template/menu.php'); ?>
           <div class="container">
 
-  <h2>Les coordonnées de votre entreprise : </h2>
+          <p class="text-light bg-dark text-center font-weight-bold">Espace Superutilisateur<h2>Les coordonnées de votre entreprise : </h2></p>
           <table class="table">
         <thead class="thead-light">
           <tr>

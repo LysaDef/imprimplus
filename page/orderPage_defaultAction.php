@@ -1,7 +1,7 @@
 <?php include('template/header.php'); ?>
 <?php include('template/menu.php'); ?>
 
-<h2>Les Commandes en cours mois par mois et client par client : </h2>
+<p class="text-light bg-dark text-center font-weight-bold">Services Comptable/Achat<h2>Les Commandes en cours mois par mois et client par client : </h2></p>
 <table class="table">
   <thead class="thead-light">
     <tr>
