@@ -1,7 +1,7 @@
 <?php
 
 
-function UserPermissionData_getSuperUser($i_userId){
+function UserPermissionData_getsu($i_userId){
 
         $request="SELECT FROM user WHERE id='.$i_userId.'";
         $results=Connection::query($request);

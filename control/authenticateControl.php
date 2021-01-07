@@ -41,7 +41,7 @@ function authenticateControl_loginAction()
             $_SESSION['id']=$user[0]['id'];
             $_SESSION['nom']=$user[0]['nom'];
             $_SESSION['prenom']=$user[0]['prenom'];
-            $_SESSION['superuser']=$user[0]['superuser'];
+            $_SESSION['su']=$user[0]['su'];
 
 
             header('location:?route=dashboard');

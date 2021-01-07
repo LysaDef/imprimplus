@@ -20,7 +20,7 @@
                     </li>
                     <br>
 
-                    <?php switch ($_SESSION['superuser']) {
+                    <?php switch ($_SESSION['su']) {
                         case 1: ?>
                             <li class="nav-item spacer">
                                 <a class="nav-link nav__link__bg" href="?route=order">Reservations</a>

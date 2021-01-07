@@ -41,7 +41,7 @@
             </div>
             <br>
 
-            <?php switch ($_SESSION['superuser']) {
+            <?php switch ($_SESSION['su']) {
                 case 1: ?>
                     <div class="col-md-4">
                         <div class="card">
@@ -108,7 +108,7 @@
             <div class="card-body">
                 <h5 class="card-title">Espace entreprise
                     <small class="float-right text-danger">
-                        <?php switch ($_SESSION['superuser']) {
+                        <?php switch ($_SESSION['su']) {
                             case 1: ?>
 
                                 <i class="fas fa-pen text-success"></i>&nbsp;
