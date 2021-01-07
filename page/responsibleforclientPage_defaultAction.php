@@ -34,6 +34,7 @@
             $html.='<tr>';
             $html.='<td>Commandes</td>';
             $html.='<td>'.$commandes['quantiteCommandees'].'</td>';
+            $html.='<td>'.$commandes['modele'].'</td>';
             $html.='</tr>';
           }
 
