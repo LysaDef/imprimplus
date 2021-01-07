@@ -41,8 +41,7 @@
             </div>
 
 
-            <?php switch ($_SESSION['su']) {
-                case 1: ?>
+            <?php if($_SESSION['su'] == 1 || $checkpermse[0]['id'] == 2 || $checkpermse[0]['id'] == 3 || $checkpermse[0]['id'] == 4) { ?>
 
 
                     <div class="col-md-4">
@@ -55,20 +54,32 @@
                             </div>
                         </div>
                     </div>
+            <?php } if($checkpermse[0]['id'] == 2 || $checkpermse[0]['id'] == 3 || $checkpermse[0]['id'] == 4){ ?>
+
 
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">Services Comptable/Achat</h5>
+                                <h5 class="card-title">Comptable/Achat</h5>
                                 <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
                                 <a href="?route=order" class="btn btn-dark btn-sm btn-block">Accéder</a>
                             </div>
                         </div>
                     </div>
-                    <?php break;
-                default:
-                    break;
-            } ?>
+            <?php } if($checkpermse[0]['id'] == 4){ ?>
+
+
+                <div class="col-md-4">
+                    <br>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Administration</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
+                            <a href="?route=turnover" class="btn btn-dark btn-sm btn-block">Accéder</a>
+                        </div>
+                    </div>
+                </div>
+            <?php } ?>
 
         </div>
     </div>
@@ -82,12 +93,7 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Commander
-                    <small class="float-right text-success">
-                        <i class="fas fa-pen text-success"></i>&nbsp;
-                        <i class="fas fa-plus text-success"></i>&nbsp;
-                        <i class="fas fa-eye text-success"></i>&nbsp;
-                        <i class="fas fa-trash-alt text-success"></i>
-                    </small>
+
                 </h5>
                 <h6 class="card-subtitle mb-2 text-muted">
                     <h6 class="card-subtitle mb-2 text-muted">Aperçu de vos permissions</h6>
@@ -95,53 +101,56 @@
 
             </div>
         </div>
-        <br>
+
+
+        <?php if($_SESSION['su'] == 1 || $checkpermse[0]['id'] == 4){?><br>
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Espace entreprise
-                    <small class="float-right text-danger">
-                        <?php switch ($_SESSION['su']) {
-                            case 1: ?>
-
-                                <i class="fas fa-pen text-success"></i>&nbsp;
-                                <i class="fas fa-plus text-success"></i>&nbsp;
-                                <i class="fas fa-eye text-success"></i>&nbsp;
-                                <i class="fas fa-trash-alt text-danger"></i>
-                                <?php break;
-                            case 0: ?>  <i class="fas fa-pen text-danger"></i>&nbsp;
-                                <i class="fas fa-plus text-danger"></i>&nbsp;
-                                <i class="fas fa-eye text-danger"></i>&nbsp;
-                                <i class="fas fa-trash-alt text-danger"></i>
-                                <?php break;
-                            default:
-                                break;
-                        } ?>
-                    </small>
-                </h5>
+                <h5 class="card-title">Espace entreprise </h5>
                 <h6 class="card-subtitle mb-2 text-muted">
                     <h6 class="card-subtitle mb-2 text-muted">Gestion des comptes salariés</h6>
                 </h6>
-
             </div>
         </div>
+        <?php }
+
+
+
+        if($checkpermse[0]['id'] == 4 || $checkpermse[0]['id'] == 3|| $checkpermse[0]['id'] == 2){?>
+
+
+
+
         <br>
+
+
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">Chiffre d'affaire
-                    <small class="float-right text-danger">
-                        <i class="fas fa-pen text-danger"></i>&nbsp;
-                        <i class="fas fa-plus text-danger"></i>&nbsp;
-                        <i class="fas fa-eye text-danger"></i>&nbsp;
-                        <i class="fas fa-trash-alt text-danger"></i>
-                    </small>
-                </h5>
+                <h5 class="card-title">Chiffre d'affaire</h5>
                 <h6 class="card-subtitle mb-2 text-muted">
-                    <h6 class="card-subtitle mb-2 text-muted">Gestion des chiffres et commandes</h6>
+                    <h6 class="card-subtitle mb-2 text-muted"><?php echo $checkpermse[0]['libelle'] ?></h6>
                 </h6>
 
             </div>
         </div>
+            <?php
+        }
 
+
+        if($checkpermse[0]['id'] == 4){?>
+        <br>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Administration</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                        <h6 class="card-subtitle mb-2 text-muted"><?php echo $checkpermse[0]['libelle'] ?></h6>
+                    </h6>
+
+                </div>
+            </div>
+
+        <?php } ?>
+        <br>
     </div>
 
 
@@ -149,4 +158,3 @@
 
 
 <?php include('template/footer.php'); ?>
-

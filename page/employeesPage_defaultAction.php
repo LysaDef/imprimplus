@@ -22,7 +22,18 @@
             <?php
             $html = '';
 
+
+            if($list[0]['client'] == 1){
+
+                echo "<div class=\"container text-secondary\">Aucune entreprise vous est assignée!</div>";
+
+            } else {
             foreach ($employees as $employee) {
+
+
+
+
+
 
                 $html .= "<div class=\"col-lg-6\"><br><div class=\"card\"><div class=\"card-body\">";
 
@@ -42,10 +53,13 @@
 
                 $html .= "</div></div></div>";
 
+                }
 
             }
 
             echo $html;
+
+
 
             ?>
 
@@ -64,6 +78,14 @@
                     <hr>
                     <?php
 
+
+                    if($list[0]['client'] == 1){
+
+                        echo "<div class=\"text-secondary\">Aucune entreprise vous est assignée!</div>";
+
+                    } else {
+
+
                     $company = "";
 
                     foreach ($salarieid as $salarid) {
@@ -78,7 +100,7 @@
                         $company .= "</div>";
 
                     }
-
+                    }
                     echo $company;
 
                     ?>

@@ -22,6 +22,7 @@ function employeesControl_defaultAction()
 
     $list = userData_GetSalarieId($_SESSION['id']);
     $i_salarieId['id'] = $list[0]['id'];
+    $i_salarieId['client_id'] = $list[0]['client'];
 
     $salarieid = UserEmployeesData_GetMyCompany($i_salarieId['id']);
 

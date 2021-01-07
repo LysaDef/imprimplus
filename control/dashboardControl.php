@@ -12,6 +12,7 @@ function dashboardControl($userAction){
 function dashboardControl_defaultAction()
 {
     $tabTitle="Tableau de bord";
-    
+
+
     include('../page/dashboardPage_default.php');
 }

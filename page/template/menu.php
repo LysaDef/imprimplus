@@ -12,43 +12,51 @@
                 <ul class="navbar-nav nav__bar__font mr-auto">
 
                     <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard <span
-                                    class="badge badge-success"><i class="fas fa-check"></i></span></a>
+                        <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard </a>
                     </li>
                     <br>
                     <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander <span
-                                    class="badge badge-success"><i class="fas fa-check"></i></span></a>
+                        <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander </a>
                     </li>
                     <br>
 
-                    <?php switch ($_SESSION['su']) {
-                        case 1: ?>
-                            <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=employees">Employés <span
-                                            class="badge badge-success"><i class="fas fa-check"></i></span></a>
-                            </li><br>
+                    <?php
+                    $checkpermse=UserPermissionData_getService($_SESSION['id']);
+                    if ($_SESSION['su'] == 1 || $checkpermse[0]['id'] == 2 || $checkpermse[0]['id'] == 3 || $checkpermse[0]['id'] == 4) {
+                        ?>
+                        <li class="nav-item spacer">
+                            <a class="nav-link nav__link__bg" href="?route=employees">Employés </a>
+                        </li><br>
 
-                            <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=responsible">Superutilisateur
-                                    <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
-                            </li><br>
-                            <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat <span
-                                            class="badge badge-primary">&nbsp;<i
-                                                class="fas fa-exclamation"></i>&nbsp;</span></a>
+                        <li class="nav-item spacer">
+                            <a class="nav-link nav__link__bg" href="?route=responsible">Superutilisateur
+                            </a>
+                        </li><br>
 
 
-                            </li><br>
-                            <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg " href="?route=turnover">Administration <span
-                                            class="badge badge-primary">&nbsp;<i
-                                                class="fas fa-exclamation"></i>&nbsp;</span></a>
-                            </li><br>
+                        <?php
+                    }
+                    if ($checkpermse[0]['id'] == 3 || $checkpermse[0]['id'] == 4) { ?>
 
-                            <?php break;
-                        default:
-                            break;
+                        <li class="nav-item spacer">
+                            <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat </a>
+
+
+                        </li><br>
+
+                        <?php
+                    }
+
+                    if ($checkpermse[0]['id'] == 4) {
+                        ?>
+                        <li class="nav-item spacer">
+                            <a class="nav-link nav__link__bg " href="?route=turnover">Administration <span
+                                        class="badge badge-danger">&nbsp;<i
+                                            class="fas fa-tools"></i>&nbsp;</span></a>
+                        </li><br>
+
+                        <?php
+
                     } ?>
                 </ul>
             </div>

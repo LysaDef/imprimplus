@@ -4,7 +4,7 @@ function userData_GetSalarieId($id)
 {
 
 
-    $request = "SELECT salarie.id FROM salarie JOIN user ON salarie.user_id=user.id WHERE user.id='" . $id . "'";
+    $request = "SELECT salarie.id, salarie.client_id AS 'client' FROM salarie JOIN user ON salarie.user_id=user.id WHERE user.id='" . $id . "'";
     $results = Connection::query($request);
     return $results;
 
