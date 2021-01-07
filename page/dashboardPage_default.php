@@ -40,36 +40,43 @@
                 </div>
             </div>
             <br>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Réservations</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
-                        <a href="?route=order" class="btn btn-dark btn-sm btn-block">Accéder</a>
+
+            <?php switch ($_SESSION['superuser']) {
+                case 1: ?>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Réservations</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
+                                <a href="?route=order" class="btn btn-dark btn-sm btn-block">Accéder</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <br>
-            <div class="col-md-4">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Service achat</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
-                        <a href="#" class="btn btn-dark btn-sm btn-block">Accéder</a>
+                    <br>
+                    <div class="col-md-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Service achat</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
+                                <a href="#" class="btn btn-dark btn-sm btn-block">Accéder</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-            <br>
-            <div class="col-md-4">
-                <br>
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Service Administration</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
-                        <a href="#" class="btn btn-dark btn-sm btn-block">Accéder</a>
+                    <br>
+                    <div class="col-md-4">
+                        <br>
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Service Administration</h5>
+                                <h6 class="card-subtitle mb-2 text-muted">Accès rapide</h6>
+                                <a href="#" class="btn btn-dark btn-sm btn-block">Accéder</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
+                    <?php break;
+                default:
+                    break;
+            } ?>
 
         </div>
     </div>
@@ -101,10 +108,22 @@
             <div class="card-body">
                 <h5 class="card-title">Espace entreprise
                     <small class="float-right text-danger">
-                        <i class="fas fa-pen text-danger"></i>&nbsp;
-                        <i class="fas fa-plus text-danger"></i>&nbsp;
-                        <i class="fas fa-eye text-success"></i>&nbsp;
-                        <i class="fas fa-trash-alt text-danger"></i>
+                        <?php switch ($_SESSION['superuser']) {
+                            case 1: ?>
+
+                                <i class="fas fa-pen text-success"></i>&nbsp;
+                                <i class="fas fa-plus text-success"></i>&nbsp;
+                                <i class="fas fa-eye text-success"></i>&nbsp;
+                                <i class="fas fa-trash-alt text-success"></i>
+                                <?php break;
+                            case 0: ?>  <i class="fas fa-pen text-danger"></i>&nbsp;
+                                <i class="fas fa-plus text-danger"></i>&nbsp;
+                                <i class="fas fa-eye text-danger"></i>&nbsp;
+                                <i class="fas fa-trash-alt text-danger"></i>
+                                <?php break;
+                            default:
+                                break;
+                        } ?>
                     </small>
                 </h5>
                 <h6 class="card-subtitle mb-2 text-muted">

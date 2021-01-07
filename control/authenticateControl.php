@@ -39,12 +39,13 @@ function authenticateControl_loginAction()
     else{
         if ($user[0]['actif']){
             $_SESSION['id']=$user[0]['id'];
-            $_SESSION['email']=$user[0]['email'];
             $_SESSION['nom']=$user[0]['nom'];
             $_SESSION['prenom']=$user[0]['prenom'];
+            $_SESSION['superuser']=$user[0]['superuser'];
 
 
             header('location:?route=dashboard');
+
         }
         else{
             $message="Vous n'êtes pas autorisé à accéder à l'application. Veuillez contacter votre administrateur.";

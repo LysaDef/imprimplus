@@ -10,6 +10,7 @@ include ('../data/caMoisDernierData.php');
 include ('../data/userData.php');
 include ('../data/tarifData.php');
 include ('../data/deleteData.php');
+include ('../data/permissionsData.php');
 
 include ('../control/authenticateControl.php');
 include ('../control/orderControl.php');
