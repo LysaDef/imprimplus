@@ -7,6 +7,7 @@
         </button>
 
 
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="container">
                 <ul class="navbar-nav nav__bar__font mr-auto">
@@ -26,13 +27,15 @@
                                 <a class="nav-link nav__link__bg" href="?route=employees">Employés <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
                             </li><br>
                             <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat</a>
+                                <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat <span class="badge badge-primary">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;</span></a>
+
+
                             </li><br>
                             <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg " href="?route=turnover">Espace Administration</a>
+                                <a class="nav-link nav__link__bg " href="?route=turnover">Administration <span class="badge badge-primary">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;</span></a>
                             </li><br>
                             <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=responsible">Espace Superutilisateur</a>
+                                <a class="nav-link nav__link__bg" href="?route=responsible">Superutilisateur <span class="badge badge-primary">&nbsp;<i class="fas fa-exclamation"></i>&nbsp;</span></a>
                             </li>
                             <?php break;
                         default:
@@ -74,7 +77,9 @@
 
 
             </form>
+
         </div>
+
     </div>
 </nav>
 
