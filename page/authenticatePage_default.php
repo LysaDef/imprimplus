@@ -9,14 +9,6 @@
 
     <div class="container">
 
-
-        <!-- <form method="POST" action="?route=authenticate&action=login">
-             <label for="mail">Adresse mail </label>
-             <input type="email" name="mail" placeholder="Saisissez votre adresse mail">
-             <label for="pwd">Mot de passe </label>
-             <input type="password" name="pwd" placeholder="Saisisser votre mot de passe">
-             <input type="submit" value="Se connecter">
-         </form>-->
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="?route=authenticate">Imprim+</a></li>
@@ -27,9 +19,10 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="jumbotron">
-                    <h3 class="text-secondary">Connexion au site <span class="float-right"><i class="fas fa-sign-in-alt"></i></span></h3>
+                    <h3 class="text-secondary">Connexion au site <span class="float-right"><i
+                                    class="fas fa-sign-in-alt"></i></span></h3>
                     <hr>
-                    <?php if(!empty($message)){?>
+                    <?php if (!empty($message)) { ?>
 
                         <div class="alert alert-danger" role="alert">
                             <?php echo $message ?>
@@ -39,31 +32,32 @@
                         </div>
 
                     <?php } ?>
-                <form method="POST" action="?route=authenticate&action=login">
-                    <div class="form-group">
-                        <label for="exampleInputEmail1">Login</label>
-                        <input type="text" class="form-control" name="login" id="exampleInputEmail1"
-                               aria-describedby="emailHelp" placeholder="Entrez votre login">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputPassword1">Mot de passe </label>
-                        <input type="password" class="form-control" name="pwd" id="exampleInputPassword1"
-                               placeholder="Password">
-                    </div>
+                    <form method="POST" action="?route=authenticate&action=login">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Login</label>
+                            <input type="text" class="form-control" name="login" id="exampleInputEmail1"
+                                   aria-describedby="emailHelp" placeholder="Entrez votre login">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Mot de passe </label>
+                            <input type="password" class="form-control" name="pwd" id="exampleInputPassword1"
+                                   placeholder="Password">
+                        </div>
 
-                    <button style="float: right;" type="submit" class="btn btn-primary">Connexion</button>
-                </form>
+                        <button style="float: right;" type="submit" class="btn btn-primary">Connexion</button>
+                    </form>
 
                 </div>
             </div>
             <div class="col-lg-6">
 
-                    <div class="alert alert-warning" role="alert">
-                        <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i></h4>
-                        <p>Toutes les fonctionnalitées du site n'ont pas encore été réalisées, veuillez nous contacter si un problème persiste.</p>
-                        <hr>
-                        <p class="mb-0"><small>Version: v3.0</small></p>
-                    </div>
+                <div class="alert alert-warning" role="alert">
+                    <h4 class="alert-heading"><i class="fas fa-exclamation-triangle"></i></h4>
+                    <p>Toutes les fonctionnalitées du site n'ont pas encore été réalisées, veuillez nous contacter si un
+                        problème persiste.</p>
+                    <hr>
+                    <p class="mb-0"><small>Version: v3.0</small></p>
+                </div>
 
 
             </div>

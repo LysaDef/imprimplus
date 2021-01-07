@@ -104,6 +104,9 @@ function bookingControl_CommandeAction()
                 $datas['modele'] = $_POST["idModele"];
                 $datas['quantity'] = $_POST["nbQuantity"];
 
+                $newtest=formatData_getAmout($datas['modele']);
+                $datas['prix']=$newtest[0]['montant'] * $datas['quantity'];
+
                 $test = commandePersoData_sendBDD($datas);
 
                 if ($test > 0) {

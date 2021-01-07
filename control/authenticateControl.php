@@ -1,7 +1,8 @@
 <?php
 
-function authenticateControl($userAction){
-    switch ($userAction){
+function authenticateControl($userAction)
+{
+    switch ($userAction) {
         case "login":
             authenticateControl_loginAction();
             break;
@@ -18,47 +19,47 @@ function authenticateControl($userAction){
 
 function authenticateControl_defaultAction()
 {
-    $tabTitle="Connexion";
-    $message='';
+    $tabTitle = "Connexion";
+    $message = '';
     include('../page/authenticatePage_default.php');
 }
+
 function authenticateControl_loginAction()
 {
-    $mail=$_POST['login'];
-    $pwd=hash('sha1',$_POST['pwd']);
-    
+    $mail = $_POST['login'];
+    $pwd = hash('sha1', $_POST['pwd']);
 
-    $user=userData_findOneWithCredentials($mail,$pwd);
 
-    if (empty($user)){
-        $message="Vos identifiants sont incorrects. Merci de réessayer";
-        $tabTitle="Connexion";
+    $user = userData_findOneWithCredentials($mail, $pwd);
+
+    if (empty($user)) {
+        $message = "Vos identifiants sont incorrects. Merci de réessayer";
+        $tabTitle = "Connexion";
         include('../page/authenticatePage_default.php');
-        
-    }
-    else{
-        if ($user[0]['actif']){
-            $_SESSION['id']=$user[0]['id'];
-            $_SESSION['nom']=$user[0]['nom'];
-            $_SESSION['prenom']=$user[0]['prenom'];
-            $_SESSION['su']=$user[0]['su'];
+
+    } else {
+        if ($user[0]['actif']) {
+            $_SESSION['id'] = $user[0]['id'];
+            $_SESSION['nom'] = $user[0]['nom'];
+            $_SESSION['prenom'] = $user[0]['prenom'];
+            $_SESSION['su'] = $user[0]['su'];
 
 
             header('location:?route=dashboard');
 
-        }
-        else{
-            $message="Vous n'êtes pas autorisé à accéder à l'application. Veuillez contacter votre administrateur.";
-            $tabTitle="Connexion";
+        } else {
+            $message = "Vous n'êtes pas autorisé à accéder à l'application. Veuillez contacter votre administrateur.";
+            $tabTitle = "Connexion";
             include('../page/authenticatePage_default.php');
         }
     }
-   
 
 
 }
-function authenticateControl_logoutAction(){
+
+function authenticateControl_logoutAction()
+{
     unset($_SESSION);
     session_destroy();
-    header('location:?route=authenticate');  
+    header('location:?route=authenticate');
 }

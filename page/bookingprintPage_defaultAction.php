@@ -69,20 +69,20 @@
 
 
                         <div class="form-row">
-                            <div class="col">
+                            <div class="col-md-12">
 
                                 <select name="idModele" id="inputState" class="form-control">
                                     <?php
                                     foreach ($formats as $format) {
-                                        $html .= '<option value="' . $format['id'] . '">' . $format['libelle'] . '</option>';
+                                        $html .= '<option value="' . $format['id'] . '">(' .$format['montant'] ."€)  " . $format['libelle'] .'</option>';
                                     }
                                     echo $html;
                                     ?>
                                 </select>
                             </div>
 
-                            <div class="col">
-
+                            <div class="col-md-12">
+                                <br>
                                 <div class="form-floating">
                                     <input name="nbQuantity" type="number" class="form-control" id="floatingInputValue"
                                            placeholder="Quantité" value="">
@@ -142,6 +142,7 @@
             <th scope="col">Quantité</th>
             <th scope="col">Format</th>
             <th scope="col">Date</th>
+            <th scope="col">Prix</th>
             <th scope="col">Modifié</th>
             <th scope="col">Actions</th>
 
@@ -162,7 +163,9 @@
             $html .= '<td><a href="?route=bookingprint&action=show&id=' . $commandePerso['id'] . '" target="_blank">Prévisualisation</a></td>';
             $html .= '<td>' . $commandePerso['quantite'] . '</td>';
             $html .= '<td>' . $commandePerso['libelle'] . '</td>';
+
             $html .= '<td>' . date('d/m/y à H:i', strtotime($commandePerso['date'])) . '</td>';
+            $html .= '<td>' . $commandePerso['montant'] . '€</td>';
             $html .= '<td>Non</td>';
             $html .= '<td><a href="#" data-toggle="modal" data-target="#exampleModal' . $i . '" class="badge badge-danger" ><i class="fas fa-trash-alt"></i></a>&nbsp;
                           <a href="?route=bookingprint&action=update&id='. $commandePerso['id'] . '" class="badge badge-primary" style="cursor: pointer;"><i class="fas fa-pen"></i></a>&nbsp;
