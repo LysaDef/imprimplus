@@ -30,7 +30,14 @@ function user_getCommandes($userId){
 }
 
 function coordonneesClientData_getAll(){
-    $request="SELECT * FROM client";
+    $request="SELECT * FROM commander JOIN salarie ON commander.salarie_id=salarie.id ";
+    $results=Connection::query($request);
+    return $results;
+
+}
+
+function commandesSalariesData_getAll(){
+    $request="SELECT * FROM commander JOIN salarie ON commander.salarie_id=salarie.id WHERE raisonSociale='" . $i_company . "'";
     $results=Connection::query($request);
     return $results;
     

@@ -21,8 +21,11 @@ function responsibleControl_defaultAction()
     $i_salarieId['id'] = $list[0]['id'];
 
     $salarieid=UserEmployeesData_GetMyCompany($i_salarieId['id']);
-    $coordonneesClients=EmployeesData_GetAll($salarieid[0]['raisonSociale']);
     $mesCommandes=tarifData_getAllByUserId($_SESSION['id']);
+
+    $commandesSalaries=commandesSalariesData_getAll($salarieid[0]['raisonSociale']);
+    var_dump($commandesSalaries);
+
     /*$clientUnUsers=user_getClient($userId);
     $usersUnClients=client_getUsers($client_id);
     $SalarieUnUsers=user_getSalarie($user_id);

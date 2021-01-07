@@ -17,21 +17,21 @@
         <tbody>
       <?php
       $totalCoordonnees="";
-      foreach ($coordonneesClients as $coordonneesClient){
-        $totalCoordonnees.='<tr>';
-        $totalCoordonnees.='<td>'.$coordonneesClient['raisonSociale'].'</td>';
-        $totalCoordonnees.='<td>'.$coordonneesClient['adresse'].'</td>';
-        $totalCoordonnees.='<td>'.$coordonneesClient['cp'].'</td>';
-        $totalCoordonnees.='<td>'.$coordonneesClient['ville'].'</td>';
-        $totalCoordonnees.='<td>'.$coordonneesClient['tel'].'</td>';
-        $totalCoordonnees.='<td>'.$coordonneesClient['email'].'</td>';
-        $totalCoordonnees.='</tr>';
+      foreach ($commandesSalaries as $commandesSalarie){
+        $totalCommandes.='<tr>';
+        $totalCommandes.='<td>'.$commandesSalarie['raisonSociale'].'</td>';
+        $totalCommandes.='<td>'.$commandesSalarie['adresse'].'</td>';
+        $totalCommandes.='<td>'.$commandesSalarie['cp'].'</td>';
+        $totalCommandes.='<td>'.$commandesSalarie['ville'].'</td>';
+        $totalCommandes.='<td>'.$commandesSalarie['tel'].'</td>';
+        $totalCommandes.='<td>'.$commandesSalarie['email'].'</td>';
+        $totalCommandes.='</tr>';
       
         
     
     }
 
-    echo $totalCoordonnees;?>
+    echo $totalCommandes;?>
 </tbody>
 </table>
 
@@ -78,21 +78,6 @@
       </table>';
 
       $html.='<p> <h4>Prix total de mes commandes : '.$prix.'</h4> </p>';
-
-      //echo $html;
-      /*
-      $html="";
-      foreach ($SalarieUnUsers as $SalarieUnUser) {
-        $html.='<tr>';
-        $html.='<td>'.$SalarieUnUser['user_id'].'</td>';
-      foreach ($usersUnClients as $usersUnClient){
-
-      
-      $html.='</tr>';
-      //}
-      }*/
-
-      
 
       echo $html;
       ?>
