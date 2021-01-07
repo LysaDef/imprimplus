@@ -1,7 +1,6 @@
 ## Imprim+
 
 
-<img src="https://i.imgur.com/C33GrZy_d.webp?maxwidth=760&fidelity=grand">
 
 Voici la retrospective du projet
 
