@@ -28,6 +28,11 @@
                                 <a class="nav-link nav__link__bg" href="?route=employees">Employés <span
                                             class="badge badge-success"><i class="fas fa-check"></i></span></a>
                             </li><br>
+
+                            <li class="nav-item spacer">
+                                <a class="nav-link nav__link__bg" href="?route=responsible">Superutilisateur
+                                    <span class="badge badge-success"><i class="fas fa-check"></i></span></a>
+                            </li><br>
                             <li class="nav-item spacer">
                                 <a class="nav-link nav__link__bg" href="?route=order">Services Comptable/Achat <span
                                             class="badge badge-primary">&nbsp;<i
@@ -40,11 +45,7 @@
                                             class="badge badge-primary">&nbsp;<i
                                                 class="fas fa-exclamation"></i>&nbsp;</span></a>
                             </li><br>
-                            <li class="nav-item spacer">
-                                <a class="nav-link nav__link__bg" href="?route=responsible">Superutilisateur <span
-                                            class="badge badge-primary">&nbsp;<i
-                                                class="fas fa-exclamation"></i>&nbsp;</span></a>
-                            </li>
+
                             <?php break;
                         default:
                             break;

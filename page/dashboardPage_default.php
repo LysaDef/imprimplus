@@ -106,7 +106,7 @@
                                 <i class="fas fa-pen text-success"></i>&nbsp;
                                 <i class="fas fa-plus text-success"></i>&nbsp;
                                 <i class="fas fa-eye text-success"></i>&nbsp;
-                                <i class="fas fa-trash-alt text-success"></i>
+                                <i class="fas fa-trash-alt text-danger"></i>
                                 <?php break;
                             case 0: ?>  <i class="fas fa-pen text-danger"></i>&nbsp;
                                 <i class="fas fa-plus text-danger"></i>&nbsp;

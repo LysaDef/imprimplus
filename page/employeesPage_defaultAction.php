@@ -26,20 +26,19 @@
 
                 $html .= "<div class=\"col-lg-6\"><br><div class=\"card\"><div class=\"card-body\">";
 
-                if($employee['su']){
+                if ($employee['su']) {
 
-                    $html .= "<h5 class=\"card-title\">" . strtoupper($employee['nom']) . " " . $employee['prenom']."&nbsp;<sup><span class=\"badge badge-pill badge-primary\"><i class=\"fas fa-star\"></i></span></sup>". "</h5>";
+                    $html .= "<h5 class=\"card-title\">" . strtoupper($employee['nom']) . " " . $employee['prenom'] . "&nbsp;<sup><span class=\"badge badge-pill badge-primary\"><i class=\"fas fa-star\"></i></span></sup>" . "</h5>";
 
                 } else {
 
-                    $html .= "<h5 class=\"card-title\">" . strtoupper($employee['nom']) . " " . $employee['prenom']. "</h5>";
+                    $html .= "<h5 class=\"card-title\">" . strtoupper($employee['nom']) . " " . $employee['prenom'] . "</h5>";
 
                 }
 
 
-
                 $html .= "<br><div class=\"float-right\"><a href=\"#\" class=\"badge badge-info \">Modifier</a>";
-                $html .= "&nbsp;<a href=\"?route=employees&action=check&id=".$employee['sid']."\" class=\"badge badge-primary \">Commandes</a></div>";
+                $html .= "&nbsp;<a href=\"?route=employees&action=check&id=" . $employee['sid'] . "\" class=\"badge badge-primary \">Commandes</a></div>";
 
                 $html .= "</div></div></div>";
 
@@ -58,35 +57,39 @@
         <hr>
         <div class="row">
             <div class="col-md-12">
-                <br><div class="jumbotron">
-                <h6 class="text-secondary">Informations<span class="float-right"><i class="fas fa-sitemap"></i></span></h6>
-                <hr>
-                <?php
+                <br>
+                <div class="jumbotron">
+                    <h6 class="text-secondary">Informations<span class="float-right"><i
+                                    class="fas fa-sitemap"></i></span></h6>
+                    <hr>
+                    <?php
 
-                $company = "";
+                    $company = "";
 
-                foreach ($salarieid as $salarid) {
+                    foreach ($salarieid as $salarid) {
 
-                    $company .= "<div class=\"card-body\">";
-                    $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-landmark text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> <b> " . $salarid['raisonSociale'] . "</b></p>";
-                    $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-envelope text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['email'] . "</p>";
-                    $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-landmark text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['tel'] . "</p>";
-                    $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-search-location text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['adresse'] ."</p>";
-                    $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-search-location text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['cp'] . ", " . $salarid['ville'] .  "</p>";
+                        $company .= "<div class=\"card-body\">";
+                        $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-landmark text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> <b> " . $salarid['raisonSociale'] . "</b></p>";
+                        $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-envelope text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['email'] . "</p>";
+                        $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-landmark text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['tel'] . "</p>";
+                        $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-search-location text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['adresse'] . "</p>";
+                        $company .= "<p class=\"card-text text-primary\"><i class=\"fas fa-search-location text-white bg-primary\" style=\"padding: 4.5px; border-radius: 3px;\"></i> " . $salarid['cp'] . ", " . $salarid['ville'] . "</p>";
 
-                    $company .= "</div>";
+                        $company .= "</div>";
 
-                }
+                    }
 
-                echo $company;
+                    echo $company;
 
-                ?>
+                    ?>
 
                     <br>
-                    <h6 class="text-secondary">Légende<span class="float-right"><i class="fas fa-stream"></i></span></h6>
+                    <h6 class="text-secondary">Légende<span class="float-right"><i class="fas fa-stream"></i></span>
+                    </h6>
                     <hr>
 
-                <sup><span class="badge badge-pill badge-primary"><i class="fas fa-star"></i></span></sup> <span class="text-primary">Responsable</span></div>
+                    <sup><span class="badge badge-pill badge-primary"><i class="fas fa-star"></i></span></sup> <span
+                            class="text-primary">Responsable</span></div>
 
             </div>
         </div>
