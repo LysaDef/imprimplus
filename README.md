@@ -3,7 +3,7 @@
 <img src="https://i.imgur.com/n0MQN8N.png">
 
 ## Imprim+
-Voici la retrospective du projet
+Voici la retrospective du projet :
 
 ```bash
 04/01/2021 : Mise en place du projet et installation des outils de développement
