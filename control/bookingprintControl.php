@@ -6,6 +6,9 @@ function bookingprintControl($userAction)
 
         case 'store':
             bookingControl_CommandeAction();
+
+
+
             break;
         case 'delete':
             $deleteId = $_GET['id'];

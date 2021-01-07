@@ -6,28 +6,65 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <div class="container">
                 <ul class="navbar-nav nav__bar__font mr-auto">
 
                     <li class="nav-item spacer">
                         <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard</a>
-                    </li><br>
+                    </li>
+                    <br>
                     <li class="nav-item spacer">
                         <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander</a>
-                    </li><br>
-                    <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg" href="?route=order">Reservations</a>
-                    </li><br>
-                    <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg " href="?route=turnover">Espace Administration</a>
-                    </li><br>
-                    <li class="nav-item spacer">
-                        <a class="nav-link nav__link__bg" href="?route=responsible">Espace Superutilisateur</a>
                     </li>
+                    <br>
 
+                    <?php switch ($_SESSION['su']) {
+                        case 1: ?>
+                            <li class="nav-item spacer">
+                                <a class="nav-link nav__link__bg" href="?route=order">Reservations</a>
+                            </li><br>
+                            <li class="nav-item spacer">
+                                <a class="nav-link nav__link__bg " href="?route=turnover">Espace Administration</a>
+                            </li><br>
+                            <li class="nav-item spacer">
+                                <a class="nav-link nav__link__bg" href="?route=responsible">Espace Superutilisateur</a>
+                            </li>
+                            <?php break;
+                        default:
+                            break;
+                    } ?>
                 </ul>
             </div>
+
+
+            <!--        <div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+            <!--            <div class="container">-->
+            <!--                <ul class="navbar-nav nav__bar__font mr-auto">-->
+            <!---->
+            <!--                    <li class="nav-item spacer">-->
+            <!--                        <a class="nav-link nav__link__bg" href="?route=dashboard">Dashboard</a>-->
+            <!--                    </li><br>-->
+            <!--                    <li class="nav-item spacer">-->
+            <!--                        <a class="nav-link nav__link__bg" href="?route=bookingprint">Commander</a>-->
+            <!--                    </li><br>-->
+            <!---->
+            <!---->
+            <!--                    <li class="nav-item spacer">-->
+            <!--                        <a class="nav-link nav__link__bg" href="?route=order">Reservations</a>-->
+            <!--                    </li><br>-->
+            <!--                    <li class="nav-item spacer">-->
+            <!--                        <a class="nav-link nav__link__bg " href="?route=turnover">Espace Administration</a>-->
+            <!--                    </li><br>-->
+            <!--                    <li class="nav-item spacer">-->
+            <!--                        <a class="nav-link nav__link__bg" href="?route=responsible">Espace Superutilisateur</a>-->
+            <!--                    </li>-->
+            <!---->
+            <!--                </ul>-->
+            <!--            </div>-->
+
+
             <form class="form-inline my-2 my-lg-0">
                 <span class="nav-item nav__link__user"><?php echo $_SESSION['prenom'] . " " . strtoupper($_SESSION['nom']) ?></span>
                 <a class="nav-link nav__link__logout" href="?route=authenticate&logout">Déconnexion</a>
