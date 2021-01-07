@@ -6,6 +6,7 @@
   <thead class="thead-light">
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Id client</th>
       <th scope="col">Nom</th>
       <th scope="col">Prenom</th>
       <th scope="col">Date</th>
@@ -23,6 +24,7 @@ $html='';
 foreach ($commandes as $commande) {
     $html.='<tr>';
     $html.='<th scope="row">'.$commande['id'].'</th>';
+    $html.='<td>'.$commande['client_id'].'</td>';
     $html.='<td>'.$commande['nom'].'</td>';
     $html.='<td>'.$commande['prenom'].'</td>';
     $html.='<td>'.$commande['date'].'</td>';

@@ -15,12 +15,13 @@ function responsibleControl($userAction)
 function responsibleControl_defaultAction()
 {
     $tabTitle="Commandes mois par mois";
+    $cordonneesClient=coordonneesClientData_getAll();
     //$mesCommandes=commandePersoData_getAllByUserId($_SESSION['id']);
     
-    //$mesCommandes=tarifData_getAllByUserId($_SESSION['id']);
-    $clientUnUser=user_getClient($user_id);
-    $usersUnClient=client_getUsers($client_id);
-    $SalarieUnUser=user_getSalarie($user_id);
-    $commandesUnUser=user_getCommandes($user_id);
+    $mesCommandes=tarifData_getAllByUserId($_SESSION['id']);
+    //$clientUnUsers=user_getClient($user_id);
+    //$usersUnClients=client_getUsers($client_id);
+    //$SalarieUnUsers=user_getSalarie($user_id);
+    //$commandesUnUsers=user_getCommandes($user_id);
     include('../page/responsibleforclientPage_defaultAction.php');
 }
