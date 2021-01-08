@@ -73,7 +73,6 @@ function commandePersoData_sendBDD($datas)
 {
 
     $request = "INSERT INTO commander VALUES(NULL,'" . $datas['modele'] . "', '" . $datas['salarieid'] . "', '" . $datas['quantity'] . "', '" . $datas['filename'] . "', NOW(), '".$datas['prix'] ."')";
-//    $request = "INSERT INTO commander VALUES(NULL,'".$datas['modele']."', '".$datas['salarieid']."', '".$datas['quantity']."', 'Undefined', NOW())";
 
     $results = Connection::exec($request);
     return $results;

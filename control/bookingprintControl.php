@@ -79,6 +79,10 @@ function bookingControl_CommandeAction()
 
             bookingControl_SetupAlert("Erreur: Vous ne pouvez pas mettre une quantitée négative...", 2);
 
+        } else if ($_POST['nbQuantity'] >= 10000){
+
+
+            bookingControl_SetupAlert("Erreur: Vous ne pouvez pas mettre une quantitée trop élevée...", 2);
         } else {
 
 
@@ -107,9 +111,9 @@ function bookingControl_CommandeAction()
                 $newtest=formatData_getAmout($datas['modele']);
                 $datas['prix']=$newtest[0]['montant'] * $datas['quantity'];
 
-                $test = commandePersoData_sendBDD($datas);
+                $checkBDD = commandePersoData_sendBDD($datas);
 
-                if ($test > 0) {
+                if ($checkBDD > 0) {
 
 
                     bookingControl_SetupAlert("Votre enregistrement à bien été effectué !", 1);

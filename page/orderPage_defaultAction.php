@@ -19,11 +19,12 @@
         <thead class="thead-light">
         <tr>
             <th scope="col">#</th>
-            <th scope="col">#Client</th>
+
             <th scope="col">Utilisateur</th>
             <th scope="col">Date</th>
             <th scope="col">Quantité</th>
             <th scope="col">Modèle</th>
+            <th scope="col">Prix</th>
             <th scope="col">Image</th>
             <th scope="col">Modifié</th>
             <th scope="col">Société</th>
@@ -38,12 +39,13 @@
         foreach ($commandes as $commande) {
             $html .= '<tr>';
             $html .= '<th scope="row">' . $commande['id'] . '</th>';
-            $html .= '<td>' . $commande['client_id'] . '</td>';
+
             $html .= '<td>' . $commande['nom'] . " " . $commande['prenom'] . '</td>';
 
             $html .= '<td>' . date('d/m/y à H:i', strtotime($commande['date'])) . '</td>';
             $html .= '<td>' . $commande['quantite'] . '</td>';
             $html .= '<td>' . $commande['libelle'] . '</td>';
+            $html .= '<td>' . $commande['prix'] . '€</td>';
             $html .= '<td><a href="?route=bookingprint&action=show&id=' . $commande['id'] . '" target="_blank">Prévisualisation</a></td>';
             $html .= '<td>Non</td>';
             $html .= '<td>' . $commande['raisonSociale'] . '</td>';
